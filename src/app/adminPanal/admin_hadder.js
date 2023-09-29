@@ -25,7 +25,7 @@ export function Admin_hadder() {
 
   return (
     <>
-    <div className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 p-[35px] text-center md:justify-between">
+    <div className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 p-[30px] text-center md:justify-between">
          <index.Menu open={openMenu} handler={setOpenMenu} allowHover>
       <index.MenuHandler>
         <index.Button

@@ -21,7 +21,7 @@ export function MultiLevelSidebar({ children }) {
         <>  
       <Link href={String(link.navigate)}>   
       <index.List>
-        <index.ListItem className="hover:bg-[#2f3642] p-0 hover:text-white group">
+        <index.ListItem className="hover:bg-[#2f3642] p-0 hover:text-white group focus:text-white group focus:bg-[#2f3642]">
           <index.ListItemPrefix>
             {link.icon}
           </index.ListItemPrefix>

@@ -12,16 +12,16 @@ const Layout = ({children}) => {
     return (
         <>
             <index.Card className="pb-[6px] rounded-none">
-                <div className="grid grid-cols-4 gap-0 rounded-none">
+                <div className="grid grid-cols-5 gap-0 rounded-none">
                     <div className="... rounded-none">
                         <MultiLevelSidebar>
                         <Image className="max-w-[66%]" src={evimg}/> 
                         </MultiLevelSidebar>
                     </div>
-                    <div className="col-span-3 ... rounded-none">
-                     <index.Card className="rounded-none">
+                    <div className="col-span-4 ... rounded-none">
+                     <div className="rounded-none border-b-4 border-[#F4F4F4]">
                         <Admin_hadder/>
-                     </index.Card>
+                     </div>
                         {children}
                     </div>
                 </div>
