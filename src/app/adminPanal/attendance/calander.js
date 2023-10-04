@@ -127,8 +127,8 @@ const DatePickerComponent = () => {
     return dayName;
   }
 
-console.log(typeof(getDayName('2023-9-1')),"ttttt")
-console.log(selectedYear)
+// console.log(typeof(getDayName('2023-9-1')),"ttttt")
+// console.log(selectedYear)
 
   return (
     <div className="w-auto relative bg-white p-4 rounded-lg">
@@ -157,7 +157,7 @@ console.log(selectedYear)
   })}
   
 </select>
-<index.MoreVertIcon className='float-right' />
+<index.MoreVertIcon className='float-right text-[#67B037]' />
 
       <div className="grid grid-cols-7 gap-0.5 mt-2">
         {['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'].map((cellText, index) =>

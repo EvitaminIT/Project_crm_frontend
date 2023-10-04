@@ -14,7 +14,7 @@ const Layout = ({children}) => {
             <index.Card className="pb-[6px] rounded-none">
                 <div className="grid grid-cols-5 gap-0 rounded-none">
                     <div className="... rounded-none">
-                        <MultiLevelSidebar>
+                        <MultiLevelSidebar >
                         <Image className="max-w-[66%]" src={evimg}/> 
                         </MultiLevelSidebar>
                     </div>

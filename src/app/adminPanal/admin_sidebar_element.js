@@ -1,4 +1,6 @@
 import index from "@/material_component/client_component";
+import { usePathname } from 'next/navigation';
+
 
 const links = [
     {
@@ -19,12 +21,12 @@ const links = [
     {
         title: "Client",
         icon: <index.BusinessCenterOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-        // navigate: '/doctor/self/patient/list',
+        navigate: '/adminPanal/client',
     },
   {
       title: "Project",
       icon: <index.Inventory2OutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-      // navigate: '/doctor/self/patient/list',
+      navigate: '/adminPanal/project',
   },
   {
     title: "Tasks",
