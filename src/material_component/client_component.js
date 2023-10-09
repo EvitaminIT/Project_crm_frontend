@@ -21,6 +21,11 @@ import {
     CardBody,
     CardFooter,
     Tooltip,
+    Tabs,
+    TabsHeader,
+    TabsBody,
+    Tab,
+    TabPanel,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -48,6 +53,8 @@ import {
   import EditCalendarOutlinedIcon from '@mui/icons-material/EditCalendarOutlined';
   import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
   import MoreVertIcon from '@mui/icons-material/MoreVert';
+  import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+  import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
   import {
     PresentationChartBarIcon,
     ShoppingBagIcon,
@@ -64,6 +71,10 @@ import {
   import NavigateBeforeSharpIcon from '@mui/icons-material/NavigateBeforeSharp';
   import NavigateNextSharpIcon from '@mui/icons-material/NavigateNextSharp';
   import AddIcon from '@mui/icons-material/Add';
+  import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
+  import { Progress } from "@material-tailwind/react";
+  import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+  import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 
 const index ={
     Card,
@@ -132,6 +143,17 @@ const index ={
     NavigateNextSharpIcon,
     AddIcon,
     MoreVertIcon,
+    NotificationsNoneOutlinedIcon,
+    MailOutlinedIcon,
+    FilterAltOutlinedIcon,
+    Tab,
+    TabPanel,
+    Tabs,
+    TabsBody,
+    TabsHeader,
+    Progress,
+    CurrencyRupeeIcon,
+    RemoveRedEyeOutlinedIcon,
 }
 
 export default index;

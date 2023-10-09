@@ -66,6 +66,7 @@ export default function page() {
           })}
         </index.Card>
     </div>
+
     <div className='mt-4 grid grid-cols-2 gap-4'>
       <div className='flex items-center'>
         <index.Typography className='mr-2'>Show</index.Typography>
@@ -124,6 +125,7 @@ export default function page() {
     </div>
       </div>
     </div>
+    
     <div className='mt-[30px]'>
       <DefaultTable/>
     </div>

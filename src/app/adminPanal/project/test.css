@@ -1,0 +1,3 @@
+.custom-tabs .md-tabs-header::before {
+    color: red;
+  }

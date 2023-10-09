@@ -1,7 +1,7 @@
 "use client"
 import index from "@/material_component/client_component";
 import { MultiLevelSidebar } from "./sidebar";
-import Admin_hadder from "../adminPanal/admin_hadder";
+import Admin_hadder from "../adminPanal/admin_header";
 import evimg from "../../Images/login1.svg"
 import Image from "next/image";
 

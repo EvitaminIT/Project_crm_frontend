@@ -25,7 +25,7 @@ export function Admin_hadder() {
 
   return (
     <>
-    <div className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 p-[30px] text-center md:justify-between">
+    <div className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 p-[30px] pb-[2%] text-center md:justify-between">
          <index.Menu open={openMenu} handler={setOpenMenu} allowHover>
       <index.MenuHandler>
         <index.Button
@@ -80,6 +80,7 @@ export function Admin_hadder() {
     </index.Menu>
 
 {/* search box */}
+<div className="flex items-center">
 <div className="relative text-gray-600">
       <index.Input
         type="search"
@@ -105,6 +106,9 @@ export function Admin_hadder() {
         </svg>
         </div>
       </button>
+    </div>
+    <index.NotificationsNoneOutlinedIcon className="p-[7px] text-4xl bg-[#67b037] text-white rounded-md ... ml-[12px]" />
+    <index.MailOutlinedIcon className="p-[7px] text-4xl bg-[#67b037] text-white rounded-md ... ml-[8px]" />
     </div>
     </div>
     

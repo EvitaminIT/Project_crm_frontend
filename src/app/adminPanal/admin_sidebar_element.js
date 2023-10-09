@@ -31,28 +31,28 @@ const links = [
   {
     title: "Tasks",
     icon: <index.FormatListBulletedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-    // navigate: '/doctor/self/patient/list',
+    navigate: '/adminPanal/task',
   },
   {
     title: "Timesheet",
     icon: <index.AccessTimeIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-    // navigate: '/doctor/self/patient/list',
+    navigate: '/adminPanal/timesheet',
   },
   {
     title: "Tracker",
     icon: <index.ExploreOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-    // navigate: '/doctor/self/patient/list',
+    navigate: '/adminPanal/tracker',
   },
 
   {
     title: "Invoices",
     icon: <index.EditCalendarOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-    // navigate: '/doctor/self/patient/list',
+    navigate: '/adminPanal/invoice',
   },
   {
     title: "Contracts",
-    icon:  <index.TextSnippetOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />
-    // navigate: '/doctor/doctordashboard',
+    icon:  <index.TextSnippetOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+    navigate: '/adminPanal/contract',
 },
 {
     title: "Calendar",

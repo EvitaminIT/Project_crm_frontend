@@ -7,7 +7,7 @@ import ssrData from "./SSRcomponent";
 
 const card_elements=[
   {
-    icon:<index.Inventory2OutlinedIcon className="text-[5vh] "/>,
+    icon:<index.Inventory2OutlinedIcon className="text-[5vh]"/>,
     title:"Total Project",
     Count:10
   },
