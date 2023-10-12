@@ -1,8 +1,105 @@
+"use client"
 import React, { useState } from 'react';
 import index from '@/material_component/client_component';
+// import ArrowButtons from './test';
 
-const DatePickerComponent = () => {
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+
+export function ArrowButtons() {
+  
+  function getMonthNumber(monthName) {
+
+  
+    // Find the index of the month name in the array (case-insensitive)
+    const index = monthNames.findIndex(
+      (name) => name.toLowerCase() === monthName.toLowerCase()
+    );
+  
+    // Return the month number (1-based) or null if not found
+    if (index !== -1) {
+      return index + 1; // Adding 1 to make it 1-based
+    } else {
+      return null; // Month name not found
+    }
+  }
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  DatePickerComponent(getMonthNumber(monthNames[currentIndex]))
+  // Step 3: Create functions to handle the click events
+  const handleIncrement = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % monthNames.length);
+  };
+
+  const handleDecrement = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? monthNames.length - 1 : prevIndex - 1
+    );
+  };
+ 
+  
+
+  // console.log(getMonthNumber(selcted_month))
+
+  return (
+    <div className="flex items-center space-x-4">
+      {/* Step 4: Render the backward (left) arrow button */}
+      <button
+        className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center focus:outline-none"
+        onClick={handleDecrement}
+      >
+        &lt;
+      </button>
+
+      {/* Display the current month */}
+      <span className="text-xl">{monthNames[currentIndex]}</span>
+
+      {/* Step 4: Render the forward (right) arrow button */}
+      <button
+        className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center focus:outline-none"
+        onClick={handleIncrement}
+      >
+        &gt;
+      </button>
+    </div>
+  );
+}
+
+
+
+const DatePickerComponent = (vel) => {
+  // function getMonthNumber(monthName) {
+  
+  //   console.log(vel)
+  //   // Find the index of the month name in the array (case-insensitive)
+  //   const index = monthNames.findIndex(
+  //     (name) => name.toLowerCase() === monthName.toLowerCase()
+  //   );
+  
+  //   // Return the month number (1-based) or null if not found
+  //   if (index !== -1) {
+  //     return index + 1; // Adding 1 to make it 1-based
+  //   } else {
+  //     return null; // Month name not found
+  //   }
+  // }
+
   const [selectedMonth_year, setSelectedMonth_Year] = useState();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  // let selcted_month = monthNames[currentIndex]
   const yearList = [];
   const startYear = 2001;
 
@@ -20,8 +117,13 @@ const DatePickerComponent = () => {
   const currYear = currDate.getFullYear();
   const currMonth = currDate.getMonth() + 1;
 
-  let selectedYear =  selectyear ?  parseInt(selectyear) : currYear;
-  let selectedMonth = selectedMonth_year ? parseInt(selectedMonth_year.Month):currMonth;
+  let selectedYear =  currYear;
+  // let selectedMonth = typeof(vel)!=="object" ? getMonthNumber(vel): currMonth
+  let selectedMonth = vel
+  console.log(selectedMonth,"mon")
+  if(vel==1){
+  console.log(typeof(vel),"test month")
+  }
   // let selectedMonthName = getMonthName(selectedYear, selectedMonth);
   // let selectedMonthDays = getDayCount(selectedYear, selectedMonth);
   
@@ -81,7 +183,6 @@ const DatePickerComponent = () => {
     return emptyFields.concat(days);
   }
 
-
   function renderDOM(year, month) {
     // Your rendering logic here
   }
@@ -109,6 +210,17 @@ const DatePickerComponent = () => {
     renderDOM(selectedYear, selectedMonth);
   }
 
+    const handleIncrement = () => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % monthNames.length);
+    };
+  
+    const handleDecrement = () => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? monthNames.length - 1 : prevIndex - 1
+      );
+    };
+    
+
 
   function getDayName(dateString) {
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -126,37 +238,30 @@ const DatePickerComponent = () => {
   }
 
 // console.log(typeof(getDayName('2023-9-1')),"ttttt")
-// console.log(selectedYear)
+console.log(getDaysArray(selectedYear,selectedMonth),"tst ary")
 
   return (
     <div className="w-auto relative bg-white p-4 rounded-lg">
-      {/* <div className="date-text">
-        {getMonthText()}
-      </div> */}
-      <select className='mr-4 bg-transparent' data-te-select-init data-te-select-clear-button="true" name='Month' onChange={getvalue} value={selectedMonth}>
-  <option value='1'>Janaury</option>
-    <option value='2'>February</option>
-    <option value='3'>March</option>
-    <option value='4'>April</option>
-    <option value='5'>May</option>
-    <option value='6'>June</option>
-    <option value='7'>July</option>
-    <option value='8'>August</option>
-    <option value='9'>September</option>
-    <option value='10'>October</option>
-    <option value='11'>November</option>
-    <option value='12'>December</option>
-</select>
-<select name='get_year' className='bg-transparent' onChange={getyearvalue}>
-  {yearList.map((years)=>{
-    return(<>
-     <option value={years}>{years}</option>
-    </>)
-  })}
-  
-</select>
-<index.MoreVertIcon className='float-right text-[#67B037]' />
+      <ArrowButtons/>
+       {/* <div className="flex items-center space-x-4">
 
+      <button
+        className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center focus:outline-none"
+        onClick={handleDecrement}
+      >    
+        &lt;
+      </button>
+
+      <span className="text-xl">{selcted_month}</span>
+
+      <button
+        className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center focus:outline-none"
+        onClick={handleIncrement}
+      >
+        &gt;
+      </button>
+    </div> */}
+    
       <div className="grid grid-cols-7 gap-0.5 mt-2">
         {['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'].map((cellText, index) =>
         {
@@ -180,7 +285,7 @@ const DatePickerComponent = () => {
         })}
 
       </div>
-
+0
     </div>
   );
 };

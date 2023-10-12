@@ -102,8 +102,7 @@ export default function page() {
             return (
               <tr key={contract}>
                 <td className={classes}>
-                  <index.Chip value={contract} />
-                    
+                  <index.Chip className='bg-[#67B037] text-center text-[#FFFFFF]' value={contract} />  
                 </td>
                 <td className={classes}>
                   <index.Typography

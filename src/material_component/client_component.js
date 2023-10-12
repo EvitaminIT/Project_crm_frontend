@@ -26,6 +26,10 @@ import {
     TabsBody,
     Tab,
     TabPanel,
+    Badge,
+    Popover,
+    PopoverHandler,
+    PopoverContent,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -75,6 +79,8 @@ import {
   import { Progress } from "@material-tailwind/react";
   import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
   import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+  import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+  
 
 const index ={
     Card,
@@ -154,6 +160,11 @@ const index ={
     Progress,
     CurrencyRupeeIcon,
     RemoveRedEyeOutlinedIcon,
+    ArrowBackIosIcon,
+    Badge,
+    Popover,
+    PopoverContent,
+    PopoverHandler,
 }
 
 export default index;
