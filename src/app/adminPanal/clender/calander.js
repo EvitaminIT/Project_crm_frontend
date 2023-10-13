@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import index from '@/material_component/client_component';
-import { task_data,displayWeeks,get_date_between,removeYearFromDate,convertDateFormat } from './SSRcomponent';
-import { PopoverWithDescription } from './test';
+import { task_data,displayWeeks,get_date_between,removeYearFromDate,convertDateFormat,test_task, get_date_from_string2,get_date_from_string } from './SSRcomponent';
+import { PopoverWithDescription } from './popover';
+import Day from './day';
 
 const monthNames = [
   "January",
@@ -16,6 +17,12 @@ const monthNames = [
   "October",
   "November",
   "December",
+];
+
+const dayNames = [
+  "yesterday",
+  "today",
+  "tomorrow",
 ];
 
 const DatePickerComponent = () => {
@@ -42,7 +49,15 @@ const DatePickerComponent = () => {
   }
 
 
+  const handleDayIncrement = () => {
+    setCurrentDayIndex((prevIndex) => (prevIndex + 1) % dayNames.length);
+  };
 
+  const handleDayDecrement = () => {
+    setCurrentDayIndex((prevIndex) =>
+      prevIndex === 0 ? dayNames.length - 1 : prevIndex - 1
+    );
+  };
   
 
   const handleIncrement = () => {
@@ -77,9 +92,10 @@ const DatePickerComponent = () => {
   const currYear = currDate.getFullYear();
   const currMonth = currDate.getMonth() + 1;
 
-
+  const [currentDayIndex, setCurrentDayIndex] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(currMonth-1);
   let selcted_month = monthNames[currentIndex]
+  let selcted_day=dayNames[currentDayIndex]
 
   let selectedYear =  currYear;
   let selectedMonth = getMonthNumber(selcted_month)
@@ -253,101 +269,29 @@ return numberOfTasks;
   };
 
   const selcted_week=displayWeeks()[count-1] 
-  console.log(selcted_week)
-  console.log(convertDateFormat("Sun Oct 01 2023"),"test month")
+  // console.log(currDate,"current date")
 
 const TABLE_ROWS = [
     {
       date: get_date_between(selcted_week[0],selcted_week[1])[0],
-      tasks:[
-        {
-          task_date:"2023-01-07",
-          task_title:"Task1",
-          task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
-          to:"sorabh",
-          laguage:"Word press",
-          assigned_by:"Prasang sir"
-        },
-        {
-          task_date:"2023-01-07",
-          task_title:"Task2",
-          task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
-          to:"sorabh",
-          laguage:"Word press",
-          assigned_by:"Prasang sir"
-        }
-      ]
     },
     {
       date: get_date_between(selcted_week[0],selcted_week[1])[1],
-      tasks:[
-        {
-          task_date:"2023-01-07",
-          task_title:"Task1",
-          task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
-          to:"sorabh",
-          laguage:"Word press",
-          assigned_by:"Prasang sir"
-        }
-      ]
     },
     {
       date: get_date_between(selcted_week[0],selcted_week[1])[2],
-      tasks:[
-        {
-          task_date:"2023-01-07",
-          task_title:"Task1",
-          task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
-          to:"sorabh",
-          laguage:"Word press",
-          assigned_by:"Prasang sir"
-        }
-      ]
     },
     {
       date: get_date_between(selcted_week[0],selcted_week[1])[3],
-      tasks:[
-        {
-          task_date:"2023-01-07",
-          task_title:"Task1",
-          task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
-          to:"sorabh",
-          laguage:"Word press",
-          assigned_by:"Prasang sir"
-        }
-      ]
     },
     {
       date: get_date_between(selcted_week[0],selcted_week[1])[4],
-      tasks:[
-        {
-          task_date:"2023-01-07",
-          task_title:"Task1",
-          task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
-          to:"sorabh",
-          laguage:"Word press",
-          assigned_by:"Prasang sir"
-        }
-      ]
     },
     {
       date: get_date_between(selcted_week[0],selcted_week[1])[5],
-      tasks:[
-        {
-          task_date:"2023-01-07",
-          task_title:"Task1",
-          task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
-          to:"sorabh",
-          laguage:"Word press",
-          assigned_by:"Prasang sir"
-        }
-      ]
     },
     {
       date: get_date_between(selcted_week[0],selcted_week[1])[6],
-      tasks:[
-        
-      ]
     },
   ];
 
@@ -357,11 +301,9 @@ const TABLE_ROWS = [
   if(activeTab==="week"){
     display_title=`Week ${count}`
   }else if(activeTab=="day"){
-
+     display_title=selcted_day
   }
  
-
-
 
   const data = [
     {
@@ -409,7 +351,7 @@ const TABLE_ROWS = [
     {
       label: "Week",
       value: "week",
-      desc:<div className='h-[52vh]'>
+      desc:<div className='h-[52vh]'> 
          <index.Card className="h-full w-full overflow-scroll">
       <table className="w-full min-w-max table-auto text-left">
         <tbody>
@@ -426,14 +368,13 @@ const TABLE_ROWS = [
                 </td>
                 <td className={`${classes} bg-blue-gray-50/50`}>
                   <div className='grid grid-cols-6 gap-4'>
-                 {tasks.map((task_dit)=>{
-                  
+                 {test_task.map((task_dit)=>{                  
                    return(
                     <>
-                  <PopoverWithDescription title={task_dit.task_title} to={task_dit.to} language={task_dit.laguage} task_description={task_dit.task_discription}/>
+                  <PopoverWithDescription selected_date={convertDateFormat(date)} comparision_date={task_dit.task_date} title={task_dit.task_title} to={task_dit.to} language={task_dit.laguage} task_description={task_dit.task_discription}/>
                   </>
                    )
-                 })}
+                  })}               
                   </div>
                 </td>
               </tr>
@@ -442,15 +383,14 @@ const TABLE_ROWS = [
         </tbody>
       </table>
     </index.Card>
-      </div>,
+      </div>, 
     },
     {
       label: "Day",
       value: "day",
-      desc:"",
+      desc:<Day task={test_task} current_date={currDate} current_month={currMonth} selcted_month={selcted_month}/>,
     },
   ]
-
   
   return (
     <div className="border-2 border-[#BABABA] rounded-lg h-full">
@@ -486,9 +426,9 @@ const TABLE_ROWS = [
     <index.Tabs value={activeTab}>
      <div className='grid grid-cols-3 gap-0'>
       <div className='flex items-center px-[16px]'>
-     <button onClick={activeTab =="week"? handleDecrement_of_week: handleDecrement}> <index.ArrowBackIosIcon className='text-lg' /> </button>
+     <button onClick={activeTab =="week"? handleDecrement_of_week: activeTab =="day" ? handleDayDecrement:handleDecrement}> <index.ArrowBackIosIcon className='text-lg' /> </button>
       <index.Typography className='text-[#67b037]'>{display_title}</index.Typography>
-      <button onClick={activeTab=="week" ? handleIncrement_of_week :handleIncrement}><index.ArrowForwardIosIcon className='text-lg' /></button>
+      <button onClick={activeTab=="week" ? handleIncrement_of_week : activeTab =="day" ? handleDayIncrement :handleIncrement}><index.ArrowForwardIosIcon className='text-lg' /></button>
       </div> 
       <index.Typography className='text-[#67b037] flex items-center'>{selcted_month} {selectedYear}</index.Typography>
       <div className='flex justify-center'>
@@ -506,6 +446,7 @@ const TABLE_ROWS = [
             value={value}
             onClick={() => setActiveTab(value)}
             className="text-white"
+            disabled={value==="day" && selcted_month!==monthNames[currMonth-1]?"true":""}
           >
             {label}
           </index.Tab>

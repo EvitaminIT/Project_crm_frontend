@@ -6,7 +6,8 @@ export function PopoverWithDescription({
   to,
   task_description,
   language,
-
+  selected_date,
+  comparision_date,
 }) {
   const [openPopover, setOpenPopover] = React.useState(false);
 
@@ -15,6 +16,7 @@ export function PopoverWithDescription({
     onMouseLeave: () => setOpenPopover(false),
   };
 
+ if(selected_date===comparision_date){
   return (
     <index.Popover open={openPopover} handler={setOpenPopover}>
       <index.PopoverHandler {...triggers}>
@@ -63,6 +65,7 @@ export function PopoverWithDescription({
       </index.PopoverContent>
     </index.Popover>
   );
+ }
 }
 
 export default PopoverWithDescription;

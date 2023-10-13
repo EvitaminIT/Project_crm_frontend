@@ -28,19 +28,59 @@ export const task_data = [
 ]
 
 
+export const test_task=[
+  {
+    task_date:"2023-10-07",
+    time:"10:00 PM",
+    task_title:"current Task1",
+    task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
+    to:"sorabh",
+    laguage:"Word press",
+    assigned_by:"Prasang sir"
+  },
+  {
+    task_date:"2023-10-01",
+    time:"10:00 PM",
+    task_title:"current Task1",
+    task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
+    to:"sorabh",
+    laguage:"Word press",
+    assigned_by:"Prasang sir"
+  },
+  {
+    task_date:"2023-09-01",
+    time:"10:00 PM",
+    task_title:"Task1",
+    task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
+    to:"sorabh",
+    laguage:"Word press",
+    assigned_by:"Prasang sir"
+  },
+  {
+    task_date:"2023-10-23",
+    time:"10:00 PM",
+    task_title:"current Task1",
+    task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
+    to:"sorabh",
+    laguage:"Word press",
+    assigned_by:"Prasang sir"
+  },
+]
+
+
 export const TABLE_HEAD = ["Name", "Job", "Employed"];
  
 
 
-// export const get_date_from_string=(str_date)=>{
-//     const dateString = str_date;
-//     const parts = dateString.split(' '); 
-//     const dayOfMonth = parseInt(parts[2], 10); 
+export const get_date_from_string=(str_date)=>{
+    const dateString = str_date;
+    const parts = dateString.split(' '); 
+    const dayOfMonth = parseInt(parts[2], 10); 
     
 
 
-//     return dayOfMonth
-// }
+    return dayOfMonth
+}
 
 
  export const displayWeeks = () => {
@@ -145,7 +185,27 @@ export function convertDateFormat(inputDate) {
   return newDateFormat;
 }
 
-// Example usage:
-const inputDate = "Sun Oct 01 2023";
-const convertedDate = convertDateFormat(inputDate);
-console.log(convertedDate); // Output: "2023-10-01"
+
+
+export function monthNameToNumber(monthName) {
+  const months = [
+    'January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'
+  ];
+
+  // Ensure the input is in title case (e.g., "October" to "october")
+  monthName = monthName.charAt(0).toUpperCase() + monthName.slice(1).toLowerCase();
+
+  const monthNumber = months.indexOf(monthName) + 1;
+
+  return monthNumber;
+}
+
+
+export const get_month_from_date = (datestring)=>{
+  const date = new Date(datestring);
+  
+  const monthNumber = date.getMonth() + 1;
+  
+  return monthNumber
+} 
