@@ -59,6 +59,7 @@ import {
   import MoreVertIcon from '@mui/icons-material/MoreVert';
   import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
   import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
+  import SubjectIcon from '@mui/icons-material/Subject';
   import {
     PresentationChartBarIcon,
     ShoppingBagIcon,
@@ -165,6 +166,7 @@ const index ={
     Popover,
     PopoverContent,
     PopoverHandler,
+    SubjectIcon,
 }
 
 export default index;

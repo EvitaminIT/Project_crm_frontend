@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import index from '@/material_component/client_component';
-import { task_data,displayWeeks,get_date_between,removeYearFromDate,convertDateFormat,test_task, get_date_from_string2,get_date_from_string } from './SSRcomponent';
+import { task_data,displayWeeks,get_date_between,removeYearFromDate,convertDateFormat,test_task, get_date_from_string2,get_date_from_string,chk_tab } from './SSRcomponent';
 import { PopoverWithDescription } from './popover';
 import Day from './day';
 
@@ -49,16 +49,9 @@ const DatePickerComponent = () => {
   }
 
 
-  const handleDayIncrement = () => {
-    setCurrentDayIndex((prevIndex) => (prevIndex + 1) % dayNames.length);
-  };
 
-  const handleDayDecrement = () => {
-    setCurrentDayIndex((prevIndex) =>
-      prevIndex === 0 ? dayNames.length - 1 : prevIndex - 1
-    );
-  };
   
+
 
   const handleIncrement = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % monthNames.length);
@@ -103,7 +96,17 @@ const DatePickerComponent = () => {
   for (let year = currYear; year >= startYear; year--) {
     yearList.push(year);
   }
-  
+
+  const handleDayIncrement = () => {
+    setCurrentDayIndex((prevIndex) => (prevIndex + 1) % dayNames.length);
+  };
+
+  const handleDayDecrement = () => {
+    setCurrentDayIndex((prevIndex) =>
+    prevIndex === 0 ? dayNames.length - 1 : prevIndex - 1,
+    );
+  };
+
 
   function getMonthName(year, month) {
     const selectedDate = new Date(year, month - 1, 1);
@@ -305,6 +308,8 @@ const TABLE_ROWS = [
   }
  
 
+  chk_tab(activeTab)
+
   const data = [
     {
       label: "Month",
@@ -371,7 +376,7 @@ const TABLE_ROWS = [
                  {test_task.map((task_dit)=>{                  
                    return(
                     <>
-                  <PopoverWithDescription selected_date={convertDateFormat(date)} comparision_date={task_dit.task_date} title={task_dit.task_title} to={task_dit.to} language={task_dit.laguage} task_description={task_dit.task_discription}/>
+                  <PopoverWithDescription selected_date={convertDateFormat(date)} comparision_date={task_dit.task_date} title={task_dit.task_title} to={task_dit.to} language={task_dit.laguage} task_description={task_dit.task_discription} />
                   </>
                    )
                   })}               
@@ -388,7 +393,7 @@ const TABLE_ROWS = [
     {
       label: "Day",
       value: "day",
-      desc:<Day task={test_task} current_date={currDate} current_month={currMonth} selcted_month={selcted_month}/>,
+      desc:<Day task={test_task} current_date={currDate} current_month={currMonth} selcted_month={selcted_month} selected_Day={selcted_day}/>,
     },
   ]
   

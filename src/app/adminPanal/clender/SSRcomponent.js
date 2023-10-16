@@ -1,3 +1,18 @@
+export const all_task=[
+  {
+    dead_line:false,
+    title:"Older console machines",
+    date_and_time:"2023-09-10 12:00:00 to 2023-09-11 20:00:00"
+  },
+  {
+    dead_line:false,
+    title:"Older console machines",
+    date_and_time:"2023-09-10 12:00:00 to 2023-09-11 20:00:00"
+  },
+]
+
+
+
 
 export const task_data = [
     {
@@ -30,7 +45,7 @@ export const task_data = [
 
 export const test_task=[
   {
-    task_date:"2023-10-07",
+    task_date:"2023-10-16",
     time:"10:00 PM",
     task_title:"current Task1",
     task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
@@ -39,9 +54,9 @@ export const test_task=[
     assigned_by:"Prasang sir"
   },
   {
-    task_date:"2023-10-01",
+    task_date:"2023-10-17",
     time:"10:00 PM",
-    task_title:"current Task1",
+    task_title:"current Task 1",
     task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
     to:"sorabh",
     laguage:"Word press",
@@ -57,9 +72,9 @@ export const test_task=[
     assigned_by:"Prasang sir"
   },
   {
-    task_date:"2023-10-23",
+    task_date:"2023-10-15",
     time:"10:00 PM",
-    task_title:"current Task1",
+    task_title:"Task1",
     task_discription:"@material-tailwind is an easy-to-use components library for Tailwind CSS and Material Design.",
     to:"sorabh",
     laguage:"Word press",
@@ -209,3 +224,77 @@ export const get_month_from_date = (datestring)=>{
   
   return monthNumber
 } 
+
+
+
+
+// export function getMonthFromDate(dateString) {
+
+//   const dateParts = dateString.split('-');
+
+
+//   const date = new Date(parseInt(dateParts[2]), parseInt(dateParts[0]) - 1, parseInt(dateParts[1]));
+
+
+//   const month = date.getMonth() + 1;
+
+//   return month;
+// }
+
+
+export function getMonthFromDate(dateString) {
+  // Create a Date object from the input date string
+  const date = new Date(dateString);
+
+  // Get the month (0-11), and add 1 to make it (1-12)
+  const month = date.getMonth() + 1;
+
+  return month;
+}
+
+
+export function getDateParts(dateString) {
+  const parts = dateString.split('-');
+  if (parts.length === 3) {
+    const month = parseInt(parts[0], 10);
+    const day = parseInt(parts[1], 10);
+    const year = parseInt(parts[2], 10);
+
+    return day;
+  } else {
+    // Handle an invalid date string
+    return null;
+  }
+}
+
+
+
+
+export function formatDate(inputDate) {
+  const originalDate = new Date(inputDate);
+
+  const year = originalDate.getUTCFullYear();
+  const month = String(originalDate.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(originalDate.getUTCDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
+
+
+export function incrementDate(originalDate, daysToAdd) {
+  const date = new Date(originalDate);
+  date.setDate(date.getDate() + daysToAdd);
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
+
+export let tab_chk=""
+
+export function chk_tab(title){
+  tab_chk=title
+}
+

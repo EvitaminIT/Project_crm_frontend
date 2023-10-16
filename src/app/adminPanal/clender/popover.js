@@ -20,7 +20,7 @@ export function PopoverWithDescription({
   return (
     <index.Popover open={openPopover} handler={setOpenPopover}>
       <index.PopoverHandler {...triggers}>
-        <index.Button className="p-0 rounded-md py-[3px] bg-[#67B037]">{title}</index.Button>
+        <index.Button className="p-0 rounded-md py-[3px] bg-[#67B037] capitalize px-[12px]">{title}</index.Button>
       </index.PopoverHandler>
       <index.PopoverContent {...triggers} className="z-50 max-w-[26rem]">
         <div className="mb-2 flex items-center gap-3">
