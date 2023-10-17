@@ -12,7 +12,7 @@ export default function page() {
   }
 
   return (
-    <div className='p-[29px] pt-[3px] overflow-auto'>
+    <div className='p-[29px] pt-[3px] pb-0 overflow-auto'>
       <index.Typography className="text-[#67B037] font-poppins">Calender</index.Typography>
       <div className="grid grid-cols-2 gap-2 mb-[5px]">
         <div className="flex">
@@ -29,7 +29,7 @@ export default function page() {
         <div className="col-span-2 ">
         <DatePickerComponent />
         </div>
-          <index.Card className="border-2 border-[#BABABA] rounded-md">
+          <index.Card className="border-2 border-[#BABABA] rounded-md overflow-auto scrollbar-hide">
             <div className="border-b-2 border-[#F4F4F4]">
             <index.Typography className="font-poppins p-4">Task</index.Typography>
             </div>
@@ -37,13 +37,13 @@ export default function page() {
               {all_task.map((tsk)=>{
                 return(
                   <>
-              <index.CardBody className="p-3">
+              <index.CardBody className="p-2">
                 <div className="rounded-md grid grid-cols-4 gap-4 bg-[#F4F4F4] px-[10px] py-[7px]">                
-                  <div className="bg-[#FFFFFF] rounded-md flex items-center">
-                  <index.SubjectIcon className="text-5xl text-[#67B037]" />
+                  <div className={tsk.dead_line ? "bg-[#FFD6D6] rounded-md flex items-center": "bg-[#FFFFFF] rounded-md flex items-center"}>
+                  <index.SubjectIcon className={tsk.dead_line ? "text-5xl text-[#E55B5B]": "text-5xl text-[#67B037]"}/>
                 </div>
                 <div className="col-span-3">
-                  <index.Typography className="font-poppins text-[#67B037]">{tsk.title}</index.Typography>
+                  <index.Typography className={tsk.dead_line ? "font-poppins text-[#E55B5B]": "font-poppins text-[#67B037]"}>{tsk.title}</index.Typography>
                   <index.Typography className="text-xs">{tsk.date_and_time}</index.Typography>
                 </div>
                 </div>

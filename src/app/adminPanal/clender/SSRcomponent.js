@@ -5,7 +5,27 @@ export const all_task=[
     date_and_time:"2023-09-10 12:00:00 to 2023-09-11 20:00:00"
   },
   {
+    dead_line:true,
+    title:"Older console machines",
+    date_and_time:"2023-09-10 12:00:00 to 2023-09-11 20:00:00"
+  },
+  {
     dead_line:false,
+    title:"Older console machines",
+    date_and_time:"2023-09-10 12:00:00 to 2023-09-11 20:00:00"
+  },
+  {
+    dead_line:true,
+    title:"Older console machines",
+    date_and_time:"2023-09-10 12:00:00 to 2023-09-11 20:00:00"
+  },
+  {
+    dead_line:false,
+    title:"Older console machines",
+    date_and_time:"2023-09-10 12:00:00 to 2023-09-11 20:00:00"
+  },
+  {
+    dead_line:true,
     title:"Older console machines",
     date_and_time:"2023-09-10 12:00:00 to 2023-09-11 20:00:00"
   },
