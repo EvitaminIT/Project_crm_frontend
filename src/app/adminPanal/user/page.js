@@ -49,7 +49,7 @@ export default function page() {
       </div>
       {/* cards */}
       
-      <div className="h-[90%] overflow-auto ...">
+      <div className="h-[90%] lg:h-[135%] overflow-auto ...">
       <div className="grid grid-cols-3 gap-4 mt-6 overflow-auto ...">
     
       { cards.map((card)=>{

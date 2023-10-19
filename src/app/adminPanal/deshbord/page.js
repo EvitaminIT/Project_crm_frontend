@@ -52,7 +52,7 @@ export default function page() {
       </>
       )
     })}
-     <div className="col-span-4 ... m-[16px] h-full">
+     <div className="col-span-4 ... m-[16px] h-full lg:h-[158%]">
       <index.Card className="py-[20px] border-2 border-[#BABABA] h-full">
         <div className="mb-[10px]">
         <index.Typography className="font-poppins text-lg ... px-[20px]">Tasks</index.Typography>

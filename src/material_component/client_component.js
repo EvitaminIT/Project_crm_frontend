@@ -30,6 +30,14 @@ import {
     Popover,
     PopoverHandler,
     PopoverContent,
+    SpeedDial,
+    SpeedDialAction,
+    SpeedDialContent,
+    SpeedDialHandler,
+    Avatar,
+    IconButton, 
+    ButtonGroup, 
+    Progress,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -39,7 +47,7 @@ import {
   import CottageIcon from '@mui/icons-material/Cottage';
   import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
   import ExploreIcon from '@mui/icons-material/Explore';
-  import { ChevronRightIcon, ChevronDownIcon,RocketLaunchIcon } from "@heroicons/react/24/outline";
+  import { ChevronRightIcon, ChevronDownIcon,RocketLaunchIcon,PlusIcon, ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
   import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
   import EditCalendarIcon from '@mui/icons-material/EditCalendar';
   import ImportContactsIcon from '@mui/icons-material/ImportContacts';
@@ -68,20 +76,19 @@ import {
     InboxIcon,
     PowerIcon,
   } from "@heroicons/react/24/solid";
-  import { Avatar } from "@material-tailwind/react";
+
   import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-  import { IconButton, ButtonGroup } from "@material-tailwind/react";
-  import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
+  // import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
   import InventorySharpIcon from '@mui/icons-material/InventorySharp';
   import NavigateBeforeSharpIcon from '@mui/icons-material/NavigateBeforeSharp';
   import NavigateNextSharpIcon from '@mui/icons-material/NavigateNextSharp';
   import AddIcon from '@mui/icons-material/Add';
   import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
-  import { Progress } from "@material-tailwind/react";
   import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
   import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
   import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-  
+
+  import GroupIcon from '@mui/icons-material/Group';
 
 const index ={
     Card,
@@ -167,6 +174,12 @@ const index ={
     PopoverContent,
     PopoverHandler,
     SubjectIcon,
+    SpeedDial,
+    SpeedDialAction,
+    SpeedDialContent,
+    PlusIcon,
+    SpeedDialHandler,
+    GroupIcon
 }
 
 export default index;

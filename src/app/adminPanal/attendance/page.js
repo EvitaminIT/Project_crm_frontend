@@ -18,7 +18,7 @@ export default function page() {
   }
   return (
     <>
-    <div className='h-[32.6rem] p-[29px] pt-[3px] overflow-auto'>
+    <div className='h-[32.6rem] lg:h-[45.6rem] p-[29px] pt-[3px] overflow-auto'>
     <index.Typography className="text-[#67B037] font-poppins">Attendance</index.Typography>
     <div className="grid grid-cols-2 gap-2 mb-[5px]">
         <div className="flex">

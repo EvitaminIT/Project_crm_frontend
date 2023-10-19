@@ -11,7 +11,7 @@ const Layout = ({children}) => {
 
     return (
         <>
-            <index.Card className="pb-[6px] rounded-none">
+            <index.Card className="pb-[6px] lg:p-0 rounded-none">
                 <div className="grid grid-cols-5 gap-0 rounded-none">
                     <div className="... rounded-none">
                         <MultiLevelSidebar >

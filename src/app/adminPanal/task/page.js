@@ -79,7 +79,7 @@ export default function page() {
       </div>  
       
       <div>
-      <index.Card className="h-[23rem] overflow-auto">
+      <index.Card className="h-[23rem] lg:h-[36rem] overflow-auto">
       <table className="w-full min-w-max table-auto text-left">
         <thead>
           <tr>

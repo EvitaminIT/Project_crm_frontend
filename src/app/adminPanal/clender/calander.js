@@ -320,7 +320,7 @@ const TABLE_ROWS = [
         {
          return (
           <>
-          <div key={index} className= { cellText==="SUN" ? "cell cell--unselectable text-center text-[#ff2020] border-solid border-2 border-[#F4F4F4]" :"cell cell--unselectable text-center border-solid border-2 border-[#F4F4F4]"}>
+          <div key={index} className= { cellText==="SUN" ? "cell cell--unselectable text-center text-[#ff2020] border-solid border-r-2 border-y-2 border-[#F4F4F4]" :"cell cell--unselectable text-center border-solid border-r-2 border-y-2 border-[#F4F4F4]"}>
             {cellText}
           </div>
           </>
@@ -330,7 +330,7 @@ const TABLE_ROWS = [
         {getDaysArray(selectedYear,selectedMonth).map((cellText) => { 
           return(
             <>
-              <div className='border-solid border-2 border-[#F4F4F4] flex justify-center'>
+              <div className='border-solid border-b-2 border-r-2 border-[#F4F4F4] flex justify-center'>
               <div className={`cell ${cellText === '' ? 'cell--unselectable invisible' : 'w-[65%] p-[6px] shadow-none bg-transparent'} ${getDayName(`${selectedYear}-${selectedMonth}-${cellText}`)==="Sunday" ? "text-[#ff2020] flex justify-center":"flex justify-center"}`}>
               {/* <index.Typography>Task</index.Typography> */}
               <index.Badge className={chk_badgis(`${selectedYear}-${selectedMonth}-${cellText}`) === 0 ? "cell--unselectable invisible":'min-w-[15px] min-h-[11px] text-[0.65rem] p-0'}

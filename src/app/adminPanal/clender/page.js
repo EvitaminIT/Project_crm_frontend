@@ -39,7 +39,7 @@ export default function page() {
                   <>
               <index.CardBody className="p-2">
                 <div className="rounded-md grid grid-cols-4 gap-4 bg-[#F4F4F4] px-[10px] py-[7px]">                
-                  <div className={tsk.dead_line ? "bg-[#FFD6D6] rounded-md flex items-center": "bg-[#FFFFFF] rounded-md flex items-center"}>
+                  <div className={tsk.dead_line ? "bg-[#FFD6D6] rounded-md flex items-center justify-center": "bg-[#FFFFFF] rounded-md flex items-center justify-center"}>
                   <index.SubjectIcon className={tsk.dead_line ? "text-5xl text-[#E55B5B]": "text-5xl text-[#67B037]"}/>
                 </div>
                 <div className="col-span-3">
