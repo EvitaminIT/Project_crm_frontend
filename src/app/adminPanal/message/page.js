@@ -1,36 +1,73 @@
 "use client"
 import index from "@/material_component/client_component"
 import React from "react";
-import {
-    Tabs,
-    TabsHeader,
-    TabsBody,
-    Tab,
-    TabPanel,
-  } from "@material-tailwind/react";
-  import {
-    Square3Stack3DIcon,
-    UserCircleIcon,
-    Cog6ToothIcon,
-  } from "@heroicons/react/24/solid";
-
+import { recent,resent_messages } from "./SSRcomponent ";
+import Online_tab from "./online_tab";
+import Test from "./test";
+import { TwitterChatboxTextarea } from "./input";
 
 export default function page() {
     const [activeTab, setActiveTab] = React.useState("dashboard");
+
+    function handleScroll(e) {
+      const container = e.target;
+      const delta = e.deltaY || e.deltaX;
+    
+      container.scrollLeft += delta;
+    
+      // Prevent the default behavior to stop the page from scrolling vertically
+      e.preventDefault();
+    }
 
     const data = [
         {
           value: "dashboard",
           icon: index.AccessTimeIcon,
-          desc: `It really matters and then like it really doesn't matter.
-          What matters is the people who are sparked by it. And the people
-          who are like offended by it, it doesn't matter.`,
+          desc:<div>
+          <index.Typography className="font-poppins">Favorites</index.Typography>
+         <div onWheel={(e) => handleScroll(e)} className=" overflow-x-auto scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-200 scrollbar-thumb-rounded-lg scrollbar-w-lg">
+  <div className="flex space-x-2 py-[6px]">
+    {recent.map((img_src) => 
+    { return(
+      <div key={index} className="flex-shrink-0">
+        <index.Avatar
+          variant="circular"
+          alt={`user ${index + 1}`}
+          size="lg"
+          className="border-2 border-[#67B037] hover:z-10 focus:z-10"
+          src={img_src.src}
+        />
+      </div>
+    )
+    })}
+  </div>
+</div>
+         <div className="lg:h-[40.8vh] scrollbar-hide overflow-auto ...">
+         {resent_messages.map((msg_ele)=>{
+          return(
+            <>
+          <Online_tab name={msg_ele.name} status={msg_ele.status} msg={msg_ele.last_msg} activity={msg_ele.active}/>
+            </>
+          )
+         })}
+         </div>
+         </div>,
         },
         {
           value: "profile",
           icon: index.GroupIcon,
-          desc: `Because it's about motivating the doers. Because I'm here
-          to follow my dreams and inspire other people to follow their dreams, too.`,
+          desc: <div>
+            <index.Typography className="font-poppins">Group</index.Typography>
+            <div className="lg:h-[49.7vh] scrollbar-hide overflow-auto ...">
+         {resent_messages.map((msg_ele)=>{
+          return(
+            <>
+          <Online_tab name={msg_ele.name} status={msg_ele.status} msg={msg_ele.last_msg} activity={msg_ele.active}/>
+            </>
+          )
+         })}
+         </div>
+          </div>,
         },
       ];
 
@@ -41,7 +78,7 @@ export default function page() {
        <div className="grid grid-cols-2 gap-2 mb-[5px]">
         <div className="flex">
         <div className="flex">
-        <index.Typography className="text-[#67B037] font-poppins">Home <index.ArrowForwardIosIcon className="text-xs" /></index.Typography>
+        <index.Typography className="text-[#67B037] font-poppins">Home<index.ArrowForwardIosIcon className="text-xs" /></index.Typography>
         <index.Typography className="text-[#979BA1]">Messenger</index.Typography>
         </div>   
       </div>
@@ -100,7 +137,7 @@ export default function page() {
       </div>
       <index.TabsBody>
         {data.map(({ value, desc }) => (
-          <index.TabPanel className='h-[90%] overflow-auto ...' key={value} value={value}>
+          <index.TabPanel className='h-[90%]' key={value} value={value}>
             {desc}
           </index.TabPanel>
         ))}
@@ -110,9 +147,61 @@ export default function page() {
      </div>
             </div>
         </index.Card>
-        
+        <div className="col-span-2">
+          <index.Card className="border-2 border-[#BABABA] h-full">
+             <div className="p-6 flex items-center justify-between border-b-4 border-[#F4F4F4]">
+              <div className="flex items-center">  
+              <index.Avatar
+        variant="circular"
+        alt="user 3"
+        size="xl"
+        className="border-2 border-white hover:z-10 focus:z-10"
+        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1288&q=80"
+      />
+      <div className="px-[10px]">   
+        <index.Typography>Raj Kumar</index.Typography>
+        <div className="flex items-center">
+        <div className="h-2 w-2 rounded-full bg-[#67B037] mr-1"/>
+        <index.Typography className="text-xs">Online</index.Typography>
+        </div>
       </div>
       </div>
+      <div>
+            <index.Typography className="text-xs">3 Min ago</index.Typography>
+         </div>
+             </div>
+             <div className="p-6 h-3/4">
+            work
+          </div>
+          <div className="mt-1">
+            <TwitterChatboxTextarea/>
+          </div>
+          {/* <div className="grid grid-cols-10">
+            <div className="flex justify-center items-center">
+              <index.LocalHospitalOutlinedIcon className="text-4xl"/>
+            </div>
+            <div className="col-span-8"> 
+          <index.Textarea
+        type="text"
+        placeholder="Type Somthing....."
+        className="!border border-none bg-white text-gray-900 ring-4 ring-transparent placeholder:text-gray-500"
+        labelProps={{
+          className: "hidden",
+        }}
+        containerProps={{ className: "min-w-[100px]" }}
+      />
+      </div>
+      <div>
+        <index.Button className="bg-[#67B037] float-right">
+        <index.SendOutlinedIcon/>
+        </index.Button>
+      </div>
+          </div> */}
+          </index.Card>
+        </div>
+      </div>
+      </div>
+      {/* <Test/> */}
     </>
   )
 };

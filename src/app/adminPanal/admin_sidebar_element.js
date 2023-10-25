@@ -72,13 +72,13 @@ const links = [
 {
 title: "Project Report",
 icon: <index.TrendingUpIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-// navigate: '/doctor/self/patient/list',
+navigate: '/adminPanal/project_report',
 },
-{
-title: "Meeting",
-icon: <index.VideocamOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-// navigate: '/doctor/self/patient/list',
-},
+// {
+// title: "Meeting",
+// icon: <index.VideocamOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+// // navigate: '/doctor/self/patient/list',
+// },
 {
 title: "Setting",
 icon: <index.SettingsOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,

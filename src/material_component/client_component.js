@@ -38,6 +38,7 @@ import {
     IconButton, 
     ButtonGroup, 
     Progress,
+    Textarea,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -76,6 +77,9 @@ import {
     InboxIcon,
     PowerIcon,
   } from "@heroicons/react/24/solid";
+
+  import LocalHospitalOutlinedIcon from '@mui/icons-material/LocalHospitalOutlined';
+  import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 
   import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
   // import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
@@ -179,7 +183,10 @@ const index ={
     SpeedDialContent,
     PlusIcon,
     SpeedDialHandler,
-    GroupIcon
+    GroupIcon,
+    LocalHospitalOutlinedIcon,
+    SendOutlinedIcon,
+    Textarea,
 }
 
 export default index;
