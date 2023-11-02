@@ -8,7 +8,7 @@ import project_component from './SSRcomponent'
 
 
 
-export default function page() {
+export default function Page() {
   const [activeTab, setActiveTab] = React.useState("all");
   const data = [
     {

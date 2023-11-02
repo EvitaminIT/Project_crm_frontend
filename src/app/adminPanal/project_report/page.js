@@ -2,7 +2,7 @@
 import index from '@/material_component/client_component';
 import { DefaultTable } from './table';
 
-export default function page() {
+export default function Page() {
   return (
     <>
      <div className='h-[31.6rem] p-[29px] pt-[3px]'>

@@ -6,7 +6,7 @@ import Online_tab from "./online_tab";
 import Test from "./test";
 import { TwitterChatboxTextarea } from "./input";
 
-export default function page() {
+export default function Page() {
     const [activeTab, setActiveTab] = React.useState("dashboard");
 
     function handleScroll(e) {

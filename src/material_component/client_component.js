@@ -91,7 +91,7 @@ import {
   import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
   import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
   import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-
+  import { Spinner } from "@material-tailwind/react";
   import GroupIcon from '@mui/icons-material/Group';
 
 const index ={
@@ -187,6 +187,7 @@ const index ={
     LocalHospitalOutlinedIcon,
     SendOutlinedIcon,
     Textarea,
+    Spinner,
 }
 
 export default index;

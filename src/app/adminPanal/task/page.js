@@ -4,7 +4,7 @@ import Image from "next/image"
 import TABLE_ROWS from "./SSRcomponent";
 import React from "react";
 
-export default function page() {
+export default function Page() {
   const [active, setActive] = React.useState(1);
  
   const getItemProps = (index) =>

@@ -5,7 +5,7 @@ import btnperson from "../../../Images/person_check.svg"
 import cards from "./SSRcomponent"
 import React from "react"
 
-export default function page() {
+export default function Page() {
  
   const [active, setActive] = React.useState(1);
  

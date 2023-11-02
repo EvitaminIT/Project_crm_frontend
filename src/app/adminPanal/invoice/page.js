@@ -8,7 +8,7 @@ import edit_icon from "../../../Images/edit.png"
 import delete_icon from "../../../Images/delete.png"
 import React from "react"
 
-export default function page() {
+export default function Page() {
     const [active, setActive] = React.useState(1);
  
     const getItemProps = (index) =>

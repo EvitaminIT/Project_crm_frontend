@@ -3,7 +3,7 @@ import index from "@/material_component/client_component"
 import { TABLE_HEAD,TABLE_ROWS } from "./SSRcomponenet";
 import React from "react";
 
-export default function page() {
+export default function Page() {
     const [active, setActive] = React.useState(1);
  
   const getItemProps = (index) =>

@@ -3,10 +3,36 @@ import Image from "next/image";
 import login_first from "../Images/login1.svg"
 import login_second from "../Images/login2.svg"
 import index from "../material_component/client_component";
-import { HeightRounded } from "@mui/icons-material";
-   
+import React from "react";
+import { useDispatch } from "react-redux";
+import { postApiData } from "./redux/AuthSlice";
+import { useSelector } from 'react-redux';
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { auth_routs } from "./Routs/Auth_Routs";
+import { useEffect } from "react";
 
   export default function SimpleRegistrationForm() {
+    const dispatch = useDispatch();
+    const [authDetails, setAuthDetails] = React.useState()
+    const router = useRouter()
+    const onChange = (e) => {
+    setAuthDetails({ ...authDetails, [e.target.name]: e.target.value })
+    }
+    
+    const data = useSelector((state) => state.myReducer.data);
+    const loading = useSelector((state) => state.myReducer.loading);
+    const error = useSelector((state) => state.myReducer.error);
+    
+  
+    loading !="pending" ? auth_routs(router,loading,data):""
+ 
+    const loginDispatch =()=>{
+      console.log("work")
+        dispatch(postApiData(authDetails))
+    }
+    
+    
     return (
   
       <div className="grid grid-cols-12 bg-[#2f3642]">
@@ -22,10 +48,13 @@ import { HeightRounded } from "@mui/icons-material";
                     variant="small"
                     color="white"
                     className="mb-4 font-semibold ..."
+                    labelProps={{
+                      className: "hidden",
+                    }}
                   >
                     Email ID
                   </index.Typography>
-            <index.Input className="ml-0 bg-[#3b4453] shadow-sm border-gray-300 rounded-lg m-2 focus:ring-2 ring-green-300 focus:shadow-[0_-1px_10px_rgba(103,176,55,1)] " size="lg" 
+            <index.Input onChange={onChange} name='email' className="!border !border-gray-300 ml-0 bg-[#3b4453] border-gray-300 rounded-lg m-2 focus:ring-2 ring-green-300 focus:shadow-[0_-1px_10px_rgba(103,176,55,1)] focus:border-none" size="lg" 
              labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -38,10 +67,13 @@ import { HeightRounded } from "@mui/icons-material";
                     variant="small"
                     color="white"
                     className="mb-4 font-semibold ..."
+                    labelProps={{
+                      className: "hidden",
+                    }}
                   >
                     Password
                   </index.Typography>
-            <index.Input className="ml-0 bg-[#3b4453] shadow-sm border-gray-300 rounded-lg m-2 focus:ring-2 ring-green-300 focus:shadow-[0_-1px_10px_rgba(103,176,55,1)] " type="password" size="lg" 
+            <index.Input onChange={onChange} name='password' className="!border !border-gray-300 ml-0 bg-[#3b4453] border-gray-300 rounded-lg m-2 focus:ring-2 ring-green-300 focus:shadow-[0_-1px_10px_rgba(103,176,55,1)] focus:border-none" type="password" size="lg" 
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -68,8 +100,8 @@ import { HeightRounded } from "@mui/icons-material";
             }
             containerProps={{ className: "-ml-2.5" }}
           />
-          <index.Button className="mt-6 bg-[#67b037]" fullWidth>
-            Login
+          <index.Button onClick={loginDispatch} className="mt-6 bg-[#67b037] flex justify-center" fullWidth>
+            {loading == "pending" ? <index.Spinner color="green" /> : "Login" }
           </index.Button>
           <index.Typography color="gray" className="mt-4 text-center font-normal text-white">
             Already have an account?{" "}
