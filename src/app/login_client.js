@@ -28,7 +28,6 @@ import { useEffect } from "react";
     loading !="pending" ? auth_routs(router,loading,data):""
  
     const loginDispatch =()=>{
-      console.log("work")
         dispatch(postApiData(authDetails))
     }
     

@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import Base_API_Service from '@/API/base_API';
 import { API } from '@/API/APIs';
-import { middleware } from '@/middleware';
+import { setCookie } from 'cookies-next';
 
 export const postApiData = createAsyncThunk('myReducer/postApiData', async (data) => {
   try {
@@ -30,14 +30,14 @@ const myReducer = createSlice({
         state.loading = 'pending';
       })
       .addCase(postApiData.fulfilled, (state, action) => {
+        console.log(action.payload.data.Token.refresh)
+        setCookie('token', action.payload.data.Token.refresh);
         state.loading = 'fulfilled';
         state.data = action.payload;
         toast.success("Login sucess",{
           position: "top-center",
           autoClose: 5000,
         })
-        middleware(state.loading)
-        localStorage.setItem("user",JSON.stringify(action.payload.data))
       })
       .addCase(postApiData.rejected, (state, action) => {
         state.loading = 'rejected';
