@@ -31,8 +31,8 @@ export default function page() {
 
        <div className="flex justify-end">
       <index.Button className="bg-[#67B037] p-0 flex items-center justify-center mr-[10px]"><index.AddIcon/></index.Button>
-      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" src={donicon}/></index.Button>
-      <index.Button className="bg-[#E55B5B] p-[2px] flex items-center justify-center"> <Image className="max-w-[60%]" src={messageicon}/></index.Button>
+      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" alt='' src={donicon}/></index.Button>
+      <index.Button className="bg-[#E55B5B] p-[2px] flex items-center justify-center"> <Image className="max-w-[60%]" alt='' src={messageicon}/></index.Button>
       </div>
       </div>
      

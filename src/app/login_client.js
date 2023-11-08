@@ -5,33 +5,38 @@ import login_second from "../Images/login2.svg"
 import index from "../material_component/client_component";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { postApiData } from "./redux/AuthSlice";
 import { useSelector } from 'react-redux';
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { auth_routs } from "./Routs/Auth_Routs";
 import { useEffect } from "react";
+import { hasCookie,deleteCookie,getCookie } from 'cookies-next';
+import { usePathname } from "next/navigation";
+import { postApiData } from "./redux/slices/AuthSlice";
+
 
   export default function SimpleRegistrationForm() {
+    const path = usePathname()
     const dispatch = useDispatch();
     const [authDetails, setAuthDetails] = React.useState()
     const router = useRouter()
     const onChange = (e) => {
     setAuthDetails({ ...authDetails, [e.target.name]: e.target.value })
     }
-    
+    const chk_cookie=hasCookie('token')
     const data = useSelector((state) => state.myReducer.data);
     const loading = useSelector((state) => state.myReducer.loading);
     const error = useSelector((state) => state.myReducer.error);
+    chk_cookie ? auth_routs(router,loading,data):""
     
-  
-    loading !="pending" ? auth_routs(router,loading,data):""
- 
+    deleteCookie('tokenErr')
+
     const loginDispatch =()=>{
         dispatch(postApiData(authDetails))
     }
     
-    
+    // path == "/" ?  hasCookie("token")? deleteCookie("token"):"" :""
+
     return (
   
       <div className="grid grid-cols-12 bg-[#2f3642]">
@@ -113,8 +118,8 @@ import { useEffect } from "react";
       </div>
       <div className="col-span-5">
         <div className="bg-[#ffffff] p-[30px] h-full">
-        <Image className="max-w-[40%] float-right" src={login_first} />
-        <Image className="mt-8 max-w-[94%] float-right" src={login_second}/>
+        <Image className="max-w-[40%] float-right" alt="" src={login_first} />
+        <Image className="mt-8 max-w-[94%] lg:max-w-[80%] float-right" alt="" src={login_second}/>
         </div>
       </div>
       </div>

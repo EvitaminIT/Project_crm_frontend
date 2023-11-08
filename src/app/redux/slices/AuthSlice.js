@@ -5,6 +5,7 @@ import Base_API_Service from '@/API/base_API';
 import { API } from '@/API/APIs';
 import { setCookie } from 'cookies-next';
 
+
 export const postApiData = createAsyncThunk('myReducer/postApiData', async (data) => {
   try {
     const response = await Base_API_Service.post(API.Auth.login,data)
@@ -30,7 +31,6 @@ const myReducer = createSlice({
         state.loading = 'pending';
       })
       .addCase(postApiData.fulfilled, (state, action) => {
-        console.log(action.payload.data.Token.refresh)
         setCookie('token', action.payload.data.Token.refresh);
         state.loading = 'fulfilled';
         state.data = action.payload;

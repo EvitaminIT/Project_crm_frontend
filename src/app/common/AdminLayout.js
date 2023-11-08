@@ -16,7 +16,7 @@ const Layout = ({children}) => {
                     <index.Card className="...">
                         {/* <MultiLevelSidebar/> */}
                         <MultiLevelSidebar>
-                        <Image className="max-w-[66%]" src={evimg}/> 
+                        <Image className="max-w-[66%]" alt="" src={evimg}/> 
                         </MultiLevelSidebar>
                     </index.Card>
                     <index.Card className="col-span-3 ...">

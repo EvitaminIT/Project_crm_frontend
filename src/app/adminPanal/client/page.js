@@ -20,8 +20,8 @@ export default function page() {
         </div>   
       </div>
        <div className="flex justify-end">
-      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" src={uploadicon}/></index.Button>
-      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" src={donicon}/></index.Button>
+      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" alt='' src={uploadicon}/></index.Button>
+      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" alt='' src={donicon}/></index.Button>
       <index.Button className="bg-[#67B037] p-0 flex items-center justify-center"><index.AddIcon/></index.Button>
       </div>
       </div>
@@ -40,7 +40,7 @@ export default function page() {
         </div>
          <div className='grid grid-cols-3 gap-4'>
             <div></div>
-            <Image src={data.Image}/>
+            <Image alt='' src={data.Image}/>
             <div></div>
          </div>
          <div className='text-center'>

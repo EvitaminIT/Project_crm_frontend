@@ -43,7 +43,7 @@ export default function Page() {
       
 
        <div className="flex justify-end">
-      <index.Button className="bg-[#67B037] p-0 flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" src={btnperson}/></index.Button>
+      <index.Button className="bg-[#67B037] p-0 flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" alt="" src={btnperson}/></index.Button>
       <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center"><index.AddIcon/> </index.Button>
       </div>
       </div>

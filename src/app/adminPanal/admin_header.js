@@ -107,8 +107,8 @@ export function Admin_hadder() {
         </div>
       </button>
     </div>
-    <index.NotificationsNoneOutlinedIcon className="p-[7px] text-4xl bg-[#67b037] text-white rounded-md ... ml-[12px]" />
-    <index.MailOutlinedIcon className="p-[7px] text-4xl bg-[#67b037] text-white rounded-md ... ml-[8px]" />
+    <index.NotificationsNoneOutlinedIcon className="p-[7px] !text-4xl bg-[#67b037] text-white rounded-md ... ml-[12px]" />
+    <index.MailOutlinedIcon className="p-[7px] !text-4xl bg-[#67b037] text-white rounded-md ... ml-[8px]" />
     </div>
     </div>
     

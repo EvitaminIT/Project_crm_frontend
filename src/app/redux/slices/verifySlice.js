@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import Base_API_Service from '@/API/base_API';
 import { API } from '@/API/APIs';
 import { setCookie,deleteCookie } from 'cookies-next';
-import { verify_token_routs } from '../Routs/Auth_Routs';
 
 
 export const verify_token_api = createAsyncThunk('verify_Reducer/verify_token_api', async (data) => {
@@ -35,6 +34,7 @@ const verify_Reducer = createSlice({
       .addCase(verify_token_api.rejected, (state, action) => {
         state.status = 400;
         deleteCookie("token");
+        setCookie('tokenErr',400)
       });
   },
 });

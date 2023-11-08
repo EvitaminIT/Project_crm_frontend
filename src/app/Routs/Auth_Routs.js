@@ -1,16 +1,15 @@
-import { toast } from "react-toastify"
+import { deleteCookie } from "cookies-next";
 
 
 export const auth_routs =(router,lod,user)=>{
   if(lod==="fulfilled"){
     router.push('/adminPanal/deshbord')     
-    // toast.success("Login sucess")
   }
 }
 
+export const chk_token =(router)=>{
+    router.push("/")
+    deleteCookie("tokenErr")
+}
 
-// export const verify_token_routs = (router,stat)=>{
-//   if (stat!=200){
-//     router.push('/') 
-//   }
-// }
+

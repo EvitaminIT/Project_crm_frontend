@@ -41,8 +41,8 @@ export default function Page() {
         </div>   
       </div>
        <div className="flex justify-end">
-      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" src={uploadicon}/></index.Button>
-      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" src={donicon}/></index.Button>
+      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" alt='' src={uploadicon}/></index.Button>
+      <index.Button className="bg-[#67B037] p-[2px] flex items-center justify-center mr-[10px]"> <Image className="max-w-[60%]" alt='' src={donicon}/></index.Button>
       <index.Button className="bg-[#67B037] p-0 flex items-center justify-center"><index.AddIcon/></index.Button>
       </div>
       </div>
@@ -156,8 +156,8 @@ export default function Page() {
                 <td>
                 <div className="grid grid-cols-3 gap-2 ">
                 <index.Button className="bg-[#67B037] p-1 "><index.RemoveRedEyeOutlinedIcon className="text-lg ..."/></index.Button>
-                <index.Button className="flex justify-center items-center bg-[#46A5C6] p-1"> <Image className="w-4" src={edit_icon} /> </index.Button>
-                <index.Button className="flex justify-center items-center bg-[#E55B5B] p-1"> <Image className="w-4" src={delete_icon} /> </index.Button>
+                <index.Button className="flex justify-center items-center bg-[#46A5C6] p-1"> <Image className="w-4" alt='' src={edit_icon} /> </index.Button>
+                <index.Button className="flex justify-center items-center bg-[#E55B5B] p-1"> <Image className="w-4" alt='' src={delete_icon} /> </index.Button>
                 </div>
                 </td>
               </tr>

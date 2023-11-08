@@ -2,76 +2,76 @@ import index from "@/material_component/client_component";
 import { usePathname } from 'next/navigation';
 
 
-const links = [
+const Elements = [
     {
         title: "Dashboard",
-        icon:  <index.CottageOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white " />,
+        icon:  <index.CottageOutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white " />,
         navigate: '/adminPanal/deshbord',
     },
     {
         title: "User",
-        icon: <index.PermIdentityIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+        icon: <index.PermIdentityIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
         navigate: '/adminPanal/user',
     },
     {
       title: "Attendance",
-      icon: <index.InventorySharpIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+      icon: <index.InventorySharpIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
       navigate: '/adminPanal/attendance',
   },
     {
         title: "Client",
-        icon: <index.BusinessCenterOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+        icon: <index.BusinessCenterOutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
         navigate: '/adminPanal/client',
     },
   {
       title: "Project",
-      icon: <index.Inventory2OutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+      icon: <index.Inventory2OutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
       navigate: '/adminPanal/project',
   },
   {
     title: "Tasks",
-    icon: <index.FormatListBulletedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+    icon: <index.FormatListBulletedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
     navigate: '/adminPanal/task',
   },
   {
     title: "Timesheet",
-    icon: <index.AccessTimeIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+    icon: <index.AccessTimeIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
     navigate: '/adminPanal/timesheet',
   },
   {
     title: "Tracker",
-    icon: <index.ExploreOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+    icon: <index.ExploreOutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
     navigate: '/adminPanal/tracker',
   },
 
   {
     title: "Invoices",
-    icon: <index.EditCalendarOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+    icon: <index.EditCalendarOutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
     navigate: '/adminPanal/invoice',
   },
   {
     title: "Contracts",
-    icon:  <index.TextSnippetOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+    icon:  <index.TextSnippetOutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
     navigate: '/adminPanal/contract',
 },
 {
     title: "Calendar",
-    icon: <index.CalendarTodayIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+    icon: <index.CalendarTodayIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
     navigate: '/adminPanal/clender',
 },
 {
     title: "Notes",
-    icon: <index.ImportContactsIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+    icon: <index.ImportContactsIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
     navigate: '/adminPanal/note',
 },
 {
   title: "Messenger",
-  icon: <index.TelegramIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+  icon: <index.TelegramIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
   navigate: '/adminPanal/message',
 },
 {
 title: "Project Report",
-icon: <index.TrendingUpIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+icon: <index.TrendingUpIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
 navigate: '/adminPanal/project_report',
 },
 // {
@@ -81,17 +81,17 @@ navigate: '/adminPanal/project_report',
 // },
 {
 title: "Setting",
-icon: <index.SettingsOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+icon: <index.SettingsOutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
 // navigate: '/doctor/self/patient/list',
 },
 {
 title: "Log Out",
-icon: <index.LogoutOutlinedIcon className="h-10 w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-// navigate: '/doctor/self/patient/list',
+icon: <index.LogoutOutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
+navigate: '/',
 },
 
 ]
 
 
 
-export default links;
+export default Elements;
