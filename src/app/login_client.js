@@ -27,7 +27,10 @@ import { postApiData } from "./redux/slices/AuthSlice";
     const data = useSelector((state) => state.myReducer.data);
     const loading = useSelector((state) => state.myReducer.loading);
     const error = useSelector((state) => state.myReducer.error);
-    chk_cookie ? auth_routs(router,loading,data):""
+    const userType = useSelector((state) => state.myReducer.user_type);
+
+    // console.log((userType),"in login")
+    chk_cookie ? auth_routs(router,loading,userType):""
     
     deleteCookie('tokenErr')
 

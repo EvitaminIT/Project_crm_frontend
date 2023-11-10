@@ -22,6 +22,7 @@ const myReducer = createSlice({
     data: null,
     error: null,
     loading: 'idle', // Redux Toolkit will manage loading state for you
+    user_type:null,
   },
   reducers: {
   },
@@ -34,6 +35,8 @@ const myReducer = createSlice({
         setCookie('token', action.payload.data.Token.refresh);
         state.loading = 'fulfilled';
         state.data = action.payload;
+        state.user_type=action.payload.data.user.type
+        // console.log(action.payload.data.user.type,"in slice")
         toast.success("Login sucess",{
           position: "top-center",
           autoClose: 5000,

@@ -1,5 +1,4 @@
 import index from "@/material_component/client_component";
-import { usePathname } from 'next/navigation';
 
 
 const Elements = [

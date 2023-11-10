@@ -17,7 +17,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <Providers>
       <NextTopLoader 
-      color='#34B233'  />
+      showSpinner={false}
+      color='#34B233' 
+      shadow="0 0 10px #2299DD,0 0 5px #2299DD" />
       <ToastContainer />
       {children}
       </Providers>

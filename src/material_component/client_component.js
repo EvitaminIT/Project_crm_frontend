@@ -93,6 +93,14 @@ import {
   import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
   import { Spinner } from "@material-tailwind/react";
   import GroupIcon from '@mui/icons-material/Group';
+  import WavingHandIcon from '@mui/icons-material/WavingHand';
+  import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
+  import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+  import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+  import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
+  import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
+  import InterpreterModeOutlinedIcon from '@mui/icons-material/InterpreterModeOutlined';
+
 
 const index ={
     Card,
@@ -188,6 +196,13 @@ const index ={
     SendOutlinedIcon,
     Textarea,
     Spinner,
+    WavingHandIcon,
+    PeopleAltOutlinedIcon,
+    PersonOutlineOutlinedIcon,
+    PersonAddAltOutlinedIcon,
+    BoltOutlinedIcon,
+    ClassOutlinedIcon,
+    InterpreterModeOutlinedIcon,
 }
 
 export default index;

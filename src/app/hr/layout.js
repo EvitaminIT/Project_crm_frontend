@@ -1,21 +1,19 @@
 "use client"
 import index from "@/material_component/client_component";
 import { MultiLevelSidebar } from "../common/sidebar";
-import Admin_hadder from "./admin_header";
+import Hr_hadder from "./hr_header";
 import evimg from "../../Images/login1.svg"
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
 import { useRouter } from "next/navigation";
-import Elements from "./admin_sidebar_element";
+import Elements from "./hr_sidebar_element";
 
 const Layout = ({children}) => {
     const router = useRouter()
     const dispatch = useDispatch();
     const status = useSelector((state) => state.verify_Reducer.status);
-   
-    // verify_token_routs(router,status)
-    // console.log(status,"in layout")
+
 
     return (
         <>
@@ -28,7 +26,7 @@ const Layout = ({children}) => {
                     </div>
                     <div className="col-span-4 ... rounded-none">
                      <div className="rounded-none border-b-4 border-[#F4F4F4]">
-                        <Admin_hadder/>
+                       <Hr_hadder/>
                      </div>
                         {children}
                     </div>

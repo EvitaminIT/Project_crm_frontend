@@ -10,7 +10,7 @@ import uploadicon from "../../../Images/upload.png"
 export default function page() {
   return (
     <>
-    <div className='h-[32.6rem] lg:h-[50.6rem] p-[29px] pt-[3px] overflow-auto'>
+    <div className='h-[32.6rem] lg:h-[42rem] p-[29px] pt-[3px] overflow-auto'>
     <index.Typography className="text-[#67B037] font-poppins">Client</index.Typography>
     <div className="grid grid-cols-2 gap-2 mb-[5px]">
         <div className="flex">

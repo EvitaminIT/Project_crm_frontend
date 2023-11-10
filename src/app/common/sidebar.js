@@ -1,7 +1,6 @@
 "use client"
 import React from "react"; 
 import index from "@/material_component/client_component";
-import Elements from "../adminPanal/admin_sidebar_element";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { logout } from "../redux/slices/LogoutSlice";
@@ -10,7 +9,7 @@ import { verify_token_api } from "../redux/slices/verifySlice";
 import { hasCookie,deleteCookie,getCookie } from 'cookies-next';
 
 
-export function MultiLevelSidebar({ children }) {
+export function MultiLevelSidebar({ children,elements }) {
    const pathname = usePathname();
    const dispatch = useDispatch();
 
@@ -33,19 +32,22 @@ export function MultiLevelSidebar({ children }) {
           { children }
       </div>
      <div className="scrollbar-hide overflow-auto hover:overflow-scroll">
-     { Elements.map((ele)=>{ 
+     { elements.map((ele)=>{ 
       return (
         <>  
       <Link onClick={String(ele.navigate)==="/"? logot : very_token} href={String(ele.navigate)}>   
       <index.List>
-        <index.ListItem className="hover:bg-[#2f3642] p-0 hover:text-white group focus:text-white group focus:bg-[#2f3642]">
+        <index.ListItem className={pathname===ele.navigate ? "hover:text-[#67B037] p-0 !text-white group !bg-[#2f3642]" : "hover:text-[#67B037] group p-0"}>
           <index.ListItemPrefix >
+            <div className={pathname===ele.navigate ? "bg-[#67b037] rounded-[8px]":""}>
             {ele.icon}
+            </div>
           </index.ListItemPrefix>
           {ele.title}
         </index.ListItem>
       </index.List>
       </Link>
+      {/* {pathname} {ele.navigate} */}
       </>
       )
     })}
