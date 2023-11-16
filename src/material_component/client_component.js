@@ -39,6 +39,8 @@ import {
     ButtonGroup, 
     Progress,
     Textarea,
+    Option,
+    Select,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -100,7 +102,7 @@ import {
   import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
   import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
   import InterpreterModeOutlinedIcon from '@mui/icons-material/InterpreterModeOutlined';
-
+  import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
 
 const index ={
     Card,
@@ -203,6 +205,9 @@ const index ={
     BoltOutlinedIcon,
     ClassOutlinedIcon,
     InterpreterModeOutlinedIcon,
+    WorkspacePremiumOutlinedIcon,
+    Option,
+    Select,
 }
 
 export default index;

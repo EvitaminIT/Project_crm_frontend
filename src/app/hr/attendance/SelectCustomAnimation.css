@@ -1,0 +1,7 @@
+/* SelectCustomAnimation.css */
+
+/* Replace 'red' with the desired arrow color */
+.material-tailwind-select__icon::before {
+    color: red !important;
+  }
+  

@@ -28,7 +28,11 @@ const Layout = ({children}) => {
                      <div className="rounded-none border-b-4 border-[#F4F4F4]">
                        <Hr_hadder/>
                      </div>
+                     <div className="overflow-auto">
+                        <div className="h-[83vh]">
                         {children}
+                        </div>
+                     </div>
                     </div>
                 </div>
             </index.Card>
