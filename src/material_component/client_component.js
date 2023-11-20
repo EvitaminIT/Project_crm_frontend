@@ -103,6 +103,7 @@ import {
   import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
   import InterpreterModeOutlinedIcon from '@mui/icons-material/InterpreterModeOutlined';
   import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
+  import SearchIcon from '@mui/icons-material/Search';
 
 const index ={
     Card,
@@ -208,6 +209,7 @@ const index ={
     WorkspacePremiumOutlinedIcon,
     Option,
     Select,
+    SearchIcon,
 }
 
 export default index;

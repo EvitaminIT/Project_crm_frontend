@@ -29,7 +29,29 @@ const Elements = [
     {
         title: "Recruitment",
         icon: <index.PersonAddAltOutlinedIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-        navigate: '/hr/',
+        navigate: '',
+        sub_menu:[
+            {
+                title:"Jobs",
+                navigate:"",
+            },
+            {
+                title:"Job Create",
+                navigate:"/hr/recruitment/job_create",
+            },
+            {
+                title:"Job Application",
+                navigate:"",
+            },
+            {
+                title:"Job on-boarding",
+                navigate:"",
+            },
+            {
+                title:"Interview Schedule",
+                navigate:"",
+            },
+        ]
     },
     {
         title: "Training",
