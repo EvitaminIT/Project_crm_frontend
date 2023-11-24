@@ -14,7 +14,7 @@ const Elements = [
     {
         title: "Leave",
         icon: <index.WavingHandIcon className="!h-10 !w-10 p-[9px] group-hover:bg-[#67b037] group-hover:text-white rounded-[8px] group-focus:bg-[#67b037] group-focus:text-white" />,
-        navigate: '/hr',
+        navigate: '/hr/leave',
     },
     {
         title: "Staff",

@@ -160,7 +160,7 @@ const DatePickerComponent = () => {
   }
 
 
-  console.log(getDaysArray(2023,9),"test")
+  // console.log(getDaysArray(2023,9),"test")
 
   function renderDOM(year, month) {
     // Your rendering logic here

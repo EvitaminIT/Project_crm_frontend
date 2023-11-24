@@ -1,4 +1,5 @@
 
+
 import {
     Card,
     Input,
@@ -41,6 +42,10 @@ import {
     Textarea,
     Option,
     Select,
+    Dialog,
+    DialogHeader,
+    DialogBody,
+    DialogFooter,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -104,6 +109,8 @@ import {
   import InterpreterModeOutlinedIcon from '@mui/icons-material/InterpreterModeOutlined';
   import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
   import SearchIcon from '@mui/icons-material/Search';
+  import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+  import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 const index ={
     Card,
@@ -210,6 +217,12 @@ const index ={
     Option,
     Select,
     SearchIcon,
+    VisibilityOutlinedIcon,
+    Dialog,
+    DialogHeader,
+    DialogBody,
+    DialogFooter,
+    EditOutlinedIcon,
 }
 
 export default index;
