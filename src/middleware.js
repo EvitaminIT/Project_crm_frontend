@@ -9,16 +9,11 @@ export async function middleware(request){
  
   if(!token || !token.value || tokenErr){
     deleteCookie('token')
-    // if (request.nextUrl.pathname.startsWith('/adminPanal')) {
     return NextResponse.redirect(new URL("/",request.url))
-    // }
-    // if (request.nextUrl.pathname.startsWith('/dashboard')) {
-
-    // }
   } 
 }
 
 
 export const config={
-    matcher:['/adminPanal/:path*']
+    matcher:['/adminPanal/:path*','/hr/:path*']
 }

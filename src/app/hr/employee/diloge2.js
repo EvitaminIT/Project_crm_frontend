@@ -42,6 +42,7 @@ export function DialogCustomAnimation({
       <index.IconButton onClick={handleOpen} className='bg-[#46A5C6]'> <index.EditCalendarOutlinedIcon/> </index.IconButton>
       <index.Dialog
         open={open}
+        size="xl"
         handler={handleOpen}
         animate={{
           mount: { scale: 1, y: 0 },
@@ -74,35 +75,10 @@ export function DialogCustomAnimation({
             </svg>
           </index.IconButton>
           </div>
+         
         </index.DialogHeader>
-        <div className="text-center">
-          <index.Typography>{activeStep === 0 ? "Personal Details": activeStep === 1 ? "Company Detail" : activeStep === 2 ? "Bank Account Detail" : ""}</index.Typography>
-        </div>
-         <div className="w-full py-4 px-8">
-      <index.Stepper
-        activeStep={activeStep}
-        isLastStep={(value) => setIsLastStep(value)}
-        isFirstStep={(value) => setIsFirstStep(value)}
-      >
-        <index.Step onClick={() => setActiveStep(0)}>
-          <index.HomeIcon className="h-5 w-5" />
-        </index.Step>
-        <index.Step onClick={() => setActiveStep(1)}>
-          <index.UserIcon className="h-5 w-5" />
-        </index.Step>
-        <index.Step onClick={() => setActiveStep(2)}>
-          <index.CogIcon className="h-5 w-5" />
-        </index.Step>
-      </index.Stepper>
-     
-    </div>
-       
-        <index.DialogBody className="mx-12 ">
-          {/* Personl Details */}
-
-          <div className={activeStep === 0 ? "":"hidden"}>
-
-          <div className="justify-center flex">
+ 
+        <div className="justify-center flex">
           <div className="relative">
         {/* Default image */}
         <Image
@@ -125,8 +101,15 @@ export function DialogCustomAnimation({
         </label>
       </div>
     </div>
-    <br/>
-    <div className="grid grid-cols-2 gap-4">
+
+        <index.DialogBody className="mx-12 ">
+         <div className="grid grid-cols-2 gap-4">
+          <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA]">
+            <div className="text-center">
+              <index.Typography className="font-poppins font-semibold">Personal Details</index.Typography>
+            </div>
+            <br/>
+          <div className="grid grid-cols-2 gap-4">
       <div className="mb-6">
       {/* <index.Typography>First Name</index.Typography> */}
       <index.Input
@@ -178,10 +161,12 @@ export function DialogCustomAnimation({
         className="!border-t-blue-gray-200 focus:!border-t-gray-900"
       />
       </div>
-      <div>
-        <index.Typography>Gender</index.Typography>
+   
         <div>
-        <index.Card className="w-full max-w-[24rem] shadow-none">
+       <div>
+        <index.Typography>Gender</index.Typography>
+        </div>    
+      <index.Card className="w-full max-w-[24rem] shadow-none">
       <index.List className="flex-row">
         <index.ListItem className="p-0">
           <label
@@ -236,138 +221,14 @@ export function DialogCustomAnimation({
       </index.List>
     </index.Card>
         </div>
-      </div>
-          </div>
-         
-          {/* Company Details */}
+      
+          </index.Card>
 
-          <div className={activeStep === 1 ? "":"hidden"}>
-            <div className="flex justify-center">
-              <Image src={comany_img} />
-            </div>
-            <br/>
-             <div>
-              <div className="mb-6">
-             <index.Input
-             type="text"
-             variant="static"
-             placeholder="#EMP00001"
-             label="Employee ID"
-             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-             </div>
-             <br/>
-             <div className="grid grid-cols-2 gap-4">
-              <div className="mb-6">
-             <index.Select variant="static" label="Branch">
-                 <index.Option>Material Tailwind HTML</index.Option>
-                 <index.Option>Material Tailwind React</index.Option>
-                 <index.Option>Material Tailwind Vue</index.Option>
-                 <index.Option>Material Tailwind Angular</index.Option>
-                 <index.Option>Material Tailwind Svelte</index.Option>
-            </index.Select>
-              </div>
-              <div className="mb-6">
-              <index.Select variant="static" label="Deparment">
-                 <index.Option>Material Tailwind HTML</index.Option>
-                 <index.Option>Material Tailwind React</index.Option>
-                 <index.Option>Material Tailwind Vue</index.Option>
-                 <index.Option>Material Tailwind Angular</index.Option>
-                 <index.Option>Material Tailwind Svelte</index.Option>
-            </index.Select>
-              </div>
-              <div className="mb-6">
-              <index.Select variant="static" label="Designation">
-                 <index.Option>Material Tailwind HTML</index.Option>
-                 <index.Option>Material Tailwind React</index.Option>
-                 <index.Option>Material Tailwind Vue</index.Option>
-                 <index.Option>Material Tailwind Angular</index.Option>
-                 <index.Option>Material Tailwind Svelte</index.Option>
-            </index.Select>
-              </div>
-              <div>
-              <index.Input
-        type="date"
-        variant="static"
-        label="Company Date Of Joining"
-        value="2023-01-01"
-        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-              </div>
-             </div>
-             </div>
-          </div>
-              
-           {/* Bank Details */}
+         </div>
 
-           <div className={activeStep === 2 ? "":"hidden"}>
-             <div className="grid grid-cols-2 gap-4">
-             <div className="mb-6">
-             <index.Input
-             type="text"
-             variant="static"
-             placeholder="Rohit Deshmukh"
-             label="Account Holder Name"
-             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-             </div>
-             <div className="mb-6">
-             <index.Input
-             type="text"
-             variant="static"
-             placeholder="0000000000154654"
-             label="Account Number"
-             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-             </div>
-             <div className="mb-6">
-             <index.Input
-             type="text"
-             variant="static"
-             placeholder="SBI"
-             label="Bank Name"
-             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-             </div>
-             <div className="mb-6">
-             <index.Input
-             type="text"
-             variant="static"
-             placeholder="SBI1234"
-             label="IFC Code"
-             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-             </div>
-             <div className="mb-6">
-             <index.Input
-             type="text"
-             variant="static"
-             placeholder="Mhow"
-             label="Branch Location"
-             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-             </div>
-             <div className="mb-6">
-             <index.Input
-             type="text"
-             variant="static"
-             placeholder="467879"
-             label="Tax Payer Id"
-             className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-             </div>
-             </div>
-           </div>
-            
         </index.DialogBody>
         <index.DialogFooter className="justify-between">
-        <index.Button onClick={handlePrev} disabled={isFirstStep}>
-          Prev
-        </index.Button>
-        <index.Button onClick={handleNext} disabled={isLastStep}>
-          Next
-        </index.Button>
-
+     
         </index.DialogFooter>
       </index.Dialog>
     </>

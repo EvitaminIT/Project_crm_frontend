@@ -46,6 +46,9 @@ import {
     DialogHeader,
     DialogBody,
     DialogFooter,
+    Stepper,
+    Step,
+    Radio,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -55,7 +58,7 @@ import {
   import CottageIcon from '@mui/icons-material/Cottage';
   import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
   import ExploreIcon from '@mui/icons-material/Explore';
-  import { ChevronRightIcon, ChevronDownIcon,RocketLaunchIcon,PlusIcon, ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
+  import { ChevronRightIcon, ChevronDownIcon,RocketLaunchIcon,PlusIcon, ArrowRightIcon, ArrowLeftIcon,HomeIcon,CogIcon,UserIcon } from "@heroicons/react/24/outline";
   import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
   import EditCalendarIcon from '@mui/icons-material/EditCalendar';
   import ImportContactsIcon from '@mui/icons-material/ImportContacts';
@@ -111,6 +114,7 @@ import {
   import SearchIcon from '@mui/icons-material/Search';
   import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
   import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+
 
 
 const index ={
@@ -224,6 +228,12 @@ const index ={
     DialogBody,
     DialogFooter,
     EditOutlinedIcon,
+    Stepper,
+    Step,
+    HomeIcon,
+    CogIcon,
+    UserIcon,
+    Radio,
 }
 
 export default index;

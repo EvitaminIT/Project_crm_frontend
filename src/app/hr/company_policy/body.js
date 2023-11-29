@@ -1,12 +1,40 @@
 import index from "@/material_component/client_component";
-import { TABLE_HEAD,TABLE_ROWS } from "./SSRcomponent"; 
+import donicon from "../../../Images/donload.svg" 
+import Image from "next/image";
 import delete_icon from "../../../Images/delete.png"
-import Image from "next/image"; 
 import React from "react";
-import { DialogCustomAnimation } from "./diloge2";
 
-
-export function Table() {
+const TABLE_HEAD = ["Title", "Attachment", "Action"];
+ 
+const TABLE_ROWS = [
+  {
+    name: "John Michael",
+    job: "Manager",
+    date: "23/04/18",
+  },
+  {
+    name: "Alexa Liras",
+    job: "Developer",
+    date: "23/04/18",
+  },
+  {
+    name: "Laurent Perrier",
+    job: "Executive",
+    date: "19/09/17",
+  },
+  {
+    name: "Michael Levi",
+    job: "Developer",
+    date: "24/12/08",
+  },
+  {
+    name: "Richard Gran",
+    job: "Manager",
+    date: "04/10/21",
+  },
+];
+ 
+export default function Body() {
     const [active, setActive] = React.useState(1);
  
     const getItemProps = (index) =>
@@ -28,7 +56,6 @@ export function Table() {
    
       setActive(active - 1);
     };
-
   return (
     <div>
     <index.Card className="h-full w-full overflow-scroll">
@@ -43,7 +70,7 @@ export function Table() {
                 <index.Typography
                   variant="small"
                   color="blue-gray"
-                  className="font-poppins leading-none opacity-70 text-[#67B037] font-semibold"
+                  className="font-normal leading-none opacity-70 text-[#67B037] font-semibold font-poppins"
                 >
                   {head}
                 </index.Typography>
@@ -52,17 +79,12 @@ export function Table() {
           </tr>
         </thead>
         <tbody>
-          {TABLE_ROWS.map(({ name, emp_id,Dep,Designation,DOJ,Email }) => {
+          {TABLE_ROWS.map(({ name, job, date }) => {
             const isLast = index === TABLE_ROWS.length - 1;
             const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
  
             return (
-              <tr key={emp_id}>
-                <td className={classes}>
-                    <div>
-                 <index.Chip className="bg-[#67B037] w-fit" value={emp_id} />
-                    </div>
-                </td>
+              <tr key={name}>
                 <td className={classes}>
                   <index.Typography
                     variant="small"
@@ -72,59 +94,27 @@ export function Table() {
                     {name}
                   </index.Typography>
                 </td>
-                <td className={classes}>
-                  <index.Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {Email}
-                  </index.Typography>
-                </td>
-                <td className={classes}>
-                  <index.Typography
-                    as="a"
-                    href="#"
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium"
-                  >
-                    {Dep}
-                  </index.Typography>
-                </td>
-                <td className={classes}>
-                  <index.Typography
-                    as="a"
-                    href="#"
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium"
-                  >
-                    {Designation}
-                  </index.Typography>
-                </td>
-                <td className={classes}>
-                  <index.Typography
-                    as="a"
-                    href="#"
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium"
-                  >
-                    {DOJ}
-                  </index.Typography>
+                <td className={`${classes} space-x-4`}>
+                <index.IconButton className="bg-[#67B037]">
+                 <index.VisibilityOutlinedIcon/>
+                </index.IconButton> 
+                <index.IconButton className="bg-[#67B037]">
+                    <Image src={donicon} />
+                </index.IconButton>
                 </td>
                 <td className={`${classes} space-x-4`}>
-                 <DialogCustomAnimation/>
-                 <index.IconButton className="bg-[#E55B5B]">
+                <index.IconButton className="bg-[#46A5C6]">    
+                <index.EditCalendarOutlinedIcon/>  
+                </index.IconButton>    
+                <index.IconButton className="bg-[#E55B5B]">
                  <Image className="w-4" alt='' src={delete_icon} />
-                 </index.IconButton>
+                </index.IconButton>
                 </td>
               </tr>
             );
           })}
         </tbody>
-      </table> 
+      </table>
     </index.Card>
     <div className="px-[25px]">
       <div className="flex items-center gap-4 float-right mt-[9px]">
@@ -153,7 +143,6 @@ export function Table() {
       </index.Button>
     </div>
     </div> 
-
     </div>
   );
 }
