@@ -9,8 +9,9 @@ import Image from "next/image";
 import DatePicker from 'react-datepicker';
 import { top_data } from './SSRcomponent';
 import Body from './body';
+import Total_pannel from '@/app/common/total_pannel';
 
-export default function page() {
+export default function Page() {
      
   const datePickerRef = useRef(null);
   const [selectedMonth, setSelectedMonth] = useState(null);
@@ -74,23 +75,7 @@ export default function page() {
     </div>
     </div> 
     <br/>
-    <div className='grid grid-cols-4 gap-4'>
-    {top_data.map((data)=>{
-        return(
-            <>
-           <index.Card className='border-solid border-2 border-[#BABABA] text-center py-[20px]'>
-         <index.Typography className='font-poppins'>{data.titles}</index.Typography>
-         <div className=''>
-            <div className='text-[#67B037]'>
-                <index.Typography variant='h1'>{data.total}</index.Typography>
-                <index.Typography>{data.titles}'s</index.Typography>
-            </div>
-         </div>
-       </index.Card>            
-            </>
-        )
-      })}         
-    </div>
+    <Total_pannel data_list={top_data}/>
     <br/>
     <Body/>
     </div>

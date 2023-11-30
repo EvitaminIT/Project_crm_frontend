@@ -28,7 +28,7 @@ const Elements = [
         sub_menu:[
             {
                 title:"Jobs",
-                navigate:"",
+                navigate:"/hr/recruitment/job",
             },
             {
                 title:"Job Create",

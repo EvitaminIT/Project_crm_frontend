@@ -3,7 +3,7 @@ import Deshbordhead from "./deshbordhead"
 import Total from "./total"
 import Body from "./body"
 
-export default function page() {
+export default function Page() {
   return (
     <>
     <div className="p-[29px] pt-[3px] pb-0">

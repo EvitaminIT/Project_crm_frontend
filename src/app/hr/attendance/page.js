@@ -9,7 +9,7 @@ import donicon from "../../../Images/donload.svg"
 import uploadicon from "../../../Images/upload.png"
 import Image from "next/image";
 
-export default function page() {
+export default function Page() {
  
   const datePickerRef = useRef(null);
   const [selectedMonth, setSelectedMonth] = useState(null);
