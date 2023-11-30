@@ -2,6 +2,7 @@ import index from "@/material_component/client_component"
 import donicon from "../../../Images/donload.svg"
 import uploadicon from "../../../Images/upload.png"
 import Image from "next/image"
+import { AddDialog } from "./add_dailoge"
 
 export default function Headder() {
   return (
@@ -20,10 +21,12 @@ export default function Headder() {
       </div>
       </div>
     <div></div>  
-    <div className="flex justify-end"> 
-      <index.IconButton className="bg-[#67B037] mr-2"> <index.SearchIcon/> </index.IconButton>
-      <index.IconButton className="bg-[#67B037] mr-2"><div className="flex justify-center"> <Image className="max-w-[87%]" alt='' src={uploadicon}/> </div> </index.IconButton>
+    <div className="flex justify-end gap-2"> 
+      <index.IconButton className="bg-[#67B037]"> <index.SearchIcon/> </index.IconButton>
+      <index.IconButton className="bg-[#67B037]"><div className="flex justify-center"> <Image className="max-w-[87%]" alt='' src={uploadicon}/> </div> </index.IconButton>
       <index.IconButton className="bg-[#67B037]"><div className="flex justify-center"> <Image className="max-w-[87%]" alt='' src={donicon}/> </div> </index.IconButton>
+      {/* <index.IconButton className="bg-[#67B037]"><index.AddIcon/></index.IconButton> */}
+      <AddDialog/>
     </div>
     </div>
 
