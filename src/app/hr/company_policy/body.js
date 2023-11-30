@@ -3,7 +3,8 @@ import Image from "next/image";
 import React from "react";
 import { DialogCustomAnimation } from "./diloge2";
 import { Policy } from "./SSRcomponent";
- 
+import Dropdown from "./droup_menu"; 
+
 export default function Body() {
     
   return (
@@ -15,9 +16,7 @@ export default function Body() {
      <index.Card className="border-2 border-[#BABABA] p-4">
       <div>
         <div className="flex justify-end">
-          <index.IconButton className="bg-transparent shadow-none hover:shadow-none">
-        <index.MoreVertIcon className='text-[#67B037] float-right'/>
-          </index.IconButton>
+          <Dropdown policy_name={data.short_tile} policy_detail={data.title} />
         </div>
         <div className="flex justify-center">
             <Image className="h-[28vh]" src={data.img}/>

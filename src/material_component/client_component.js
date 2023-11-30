@@ -49,6 +49,7 @@ import {
     Stepper,
     Step,
     Radio,
+    Collapse,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -234,6 +235,7 @@ const index ={
     CogIcon,
     UserIcon,
     Radio,
+    Collapse,
 }
 
 export default index;

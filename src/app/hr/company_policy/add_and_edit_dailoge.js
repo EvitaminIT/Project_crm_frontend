@@ -4,8 +4,10 @@ import Image from "next/image";
 
 
 
-export function AddDialog({
-
+export function AddEditDialog({
+    Policy_Name,
+    Policy_details,
+    Policy_file,
 }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(!open);
@@ -29,16 +31,21 @@ export function AddDialog({
     }
   };
 
+  console.log(Policy_Name,Policy_details,Policy_file,"work")
+
   const [selectedFile, setSelectedFile] = React.useState(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setSelectedFile(file);
   };
+
+  Policy_file ? setSelectedFile(Policy_file) : "";
+
  
   return (
     <>
-      <index.IconButton onClick={handleOpen} className="bg-[#67B037]"><index.AddIcon/></index.IconButton>
+      {Policy_Name ? <index.MenuItem onClick={handleOpen}><index.EditOutlinedIcon/> Edit</index.MenuItem> : <index.IconButton onClick={handleOpen} className="bg-[#67B037]"><index.AddIcon/></index.IconButton> }
       <index.Dialog
         size="lg"
         open={open}
@@ -79,8 +86,8 @@ export function AddDialog({
          <index.Typography className="text-center font-poppins font-semibold text-[#67B037] text-lg">Add Policy</index.Typography>
         <index.DialogBody className="mx-12 ">
         <index.Card className="grid grid-cols-2 gap-4 p-6 border-2 border-[#BABABA]">
-            <index.Input label="Policy Name" variant="static" placeholder="Policy Name"/>
-            <index.Input label="Policy details" variant="static" placeholder="Policy details"/>
+            <index.Input label="Policy Name" variant="static" placeholder="Policy Name" value={Policy_Name}/>
+            <index.Input label="Policy details" variant="static" placeholder="Policy details" value={Policy_details} />
             <div className="col-span-2">
              <index.Typography className="font-poppins text-base">Add Policy Doc</index.Typography>
             <div class="flex items-center justify-center w-full">
@@ -97,30 +104,12 @@ export function AddDialog({
                 <input id="dropzone-file" type="file" class="hidden" onChange={handleFileChange}/>
             </label>
             </div> 
-                {/* <div className="p-4 border-dashed border-2 border-gray-400">
-      <label
-        htmlFor="fileInput"
-        className="cursor-pointer block text-center text-gray-600"
-      >
-        {selectedFile ? (
-          <p>{selectedFile.name}</p>
-        ) : (
-          <p>Drag and drop your file here or click to select</p>
-        )}
-      </label>
-      <input
-        id="fileInput"
-        type="file"
-        className="hidden"
-        onChange={handleFileChange}
-      />
-    </div> */}
             </div>
         </index.Card>
         </index.DialogBody>
 
-        <index.DialogFooter className="justify-between">
-     
+        <index.DialogFooter className="flex justify-end px-16">
+          <index.Button className="bg-[#67B037]">{Policy_Name ? "Edit Policy" : "Add Policy"}</index.Button>
         </index.DialogFooter>
       </index.Dialog>
     </>

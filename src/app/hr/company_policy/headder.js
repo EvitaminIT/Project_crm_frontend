@@ -2,7 +2,9 @@ import index from "@/material_component/client_component"
 import donicon from "../../../Images/donload.svg"
 import uploadicon from "../../../Images/upload.png"
 import Image from "next/image"
-import { AddDialog } from "./add_dailoge"
+import { AddEditDialog } from "./add_and_edit_dailoge"
+
+
 
 export default function Headder() {
   return (
@@ -26,7 +28,7 @@ export default function Headder() {
       <index.IconButton className="bg-[#67B037]"><div className="flex justify-center"> <Image className="max-w-[87%]" alt='' src={uploadicon}/> </div> </index.IconButton>
       <index.IconButton className="bg-[#67B037]"><div className="flex justify-center"> <Image className="max-w-[87%]" alt='' src={donicon}/> </div> </index.IconButton>
       {/* <index.IconButton className="bg-[#67B037]"><index.AddIcon/></index.IconButton> */}
-      <AddDialog/>
+      <AddEditDialog/>
     </div>
     </div>
 
