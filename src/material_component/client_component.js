@@ -50,6 +50,7 @@ import {
     Step,
     Radio,
     Collapse,
+    Switch,
   } from "@material-tailwind/react";
   import GroupsIcon from '@mui/icons-material/Groups';
   import PestControlIcon from '@mui/icons-material/PestControl';
@@ -236,6 +237,7 @@ const index ={
     UserIcon,
     Radio,
     Collapse,
+    Switch,
 }
 
 export default index;

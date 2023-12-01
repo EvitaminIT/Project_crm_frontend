@@ -13,11 +13,7 @@ const Dropdown = ({
     setIsOpen(!isOpen);
   };
 
-  // const handleSelect = (value) => {
-  //   console.log(`Selected value: ${value}`);
-  //   // Implement your logic here based on the selected value
-  //   setIsOpen(false);
-  // };
+
 
   return (
     <div className="relative inline-block text-left">

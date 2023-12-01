@@ -61,7 +61,7 @@ import { postApiData } from "./redux/slices/AuthSlice";
                   >
                     Email ID
                   </index.Typography>
-            <index.Input onChange={onChange} name='email' className="!border !border-gray-300 ml-0 bg-[#3b4453] border-gray-300 rounded-lg m-2 focus:ring-2 ring-green-300 focus:shadow-[0_-1px_10px_rgba(103,176,55,1)] focus:border-none" size="lg" 
+            <index.Input onChange={onChange} name='email' className="focus:bg-[#e8f0fe] !border !border-gray-300 ml-0 bg-[#3b4453] border-gray-300 rounded-lg m-2 focus:ring-2 ring-green-300 focus:shadow-[0_-1px_10px_rgba(103,176,55,1)] focus:border-none" size="lg" 
              labelProps={{
               className: "before:content-none after:content-none",
             }}
@@ -80,7 +80,7 @@ import { postApiData } from "./redux/slices/AuthSlice";
                   >
                     Password
                   </index.Typography>
-            <index.Input onChange={onChange} name='password' className="!border !border-gray-300 ml-0 bg-[#3b4453] border-gray-300 rounded-lg m-2 focus:ring-2 ring-green-300 focus:shadow-[0_-1px_10px_rgba(103,176,55,1)] focus:border-none" type="password" size="lg" 
+            <index.Input onChange={onChange} name='password' className="focus:bg-[#e8f0fe] !border !border-gray-300 ml-0 bg-[#3b4453] border-gray-300 rounded-lg m-2 focus:ring-2 ring-green-300 focus:shadow-[0_-1px_10px_rgba(103,176,55,1)] focus:border-none" type="password" size="lg" 
               labelProps={{
                 className: "before:content-none after:content-none",
               }}

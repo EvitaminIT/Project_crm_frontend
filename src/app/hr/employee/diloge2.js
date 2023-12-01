@@ -2,7 +2,8 @@ import React from "react";
 import index from "@/material_component/client_component"; 
 import Image from "next/image";
 import default_img from '../../../Images/defult.jpg'
-import comany_img  from '../../../Images/login1.svg'
+import TagInput from "./input_tag";
+import Test from "./test";
 
 export function DialogCustomAnimation({
     profile_image,
@@ -19,7 +20,7 @@ export function DialogCustomAnimation({
   const [activeStep, setActiveStep] = React.useState(0);
   const [isLastStep, setIsLastStep] = React.useState(false);
   const [isFirstStep, setIsFirstStep] = React.useState(false);
- 
+  const [isChecked, setChecked] = React.useState(false);
   const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
   const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
 
@@ -35,6 +36,11 @@ export function DialogCustomAnimation({
     }
   };
 
+
+
+  const handleChange = () => {
+    setChecked(!isChecked); // Toggle the state
+  };
 
  
   return (
@@ -86,82 +92,122 @@ export function DialogCustomAnimation({
           alt="Default"
           width={500} // Set the width of the image
           height={500} // Set the height of the image
-          className="w-36 h-auto rounded-md cursor-pointer"
+          className="border-solid border-2 border-[#67B037] w-36 h-auto rounded-full cursor-pointer"
         />
 
         {/* Upload option on hover */}
-        <label className="rounded-md w-36 absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+        <label className="rounded-full w-36 absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
           <span className="text-lg">Upload Image</span>
           <input
             type="file"
             accept="image/*"
-            className="hidden"
+            className="hidden" 
             onChange={handleImageChange}
           />
         </label>
       </div>
     </div>
+        <div className="gap-4 px-16 flex justify-end mb-4">
+        <index.Switch color="red" checked={isChecked} onChange={handleChange} />
+        <p>Edit is {isChecked ? "on" : "off"}</p>
+        </div>
 
-        <index.DialogBody className="mx-12 ">
-         <div className="grid grid-cols-2 gap-4">
+        <index.DialogBody className="mx-12 overflow-auto h-[65vh] scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-200 scrollbar-thumb-rounded-lg scrollbar-w-lg">
+         <div className="grid grid-cols-2 gap-4 ">
+          {/* Personal Details */}
           <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA]">
-            <div className="text-center">
-              <index.Typography className="font-poppins font-semibold">Personal Details</index.Typography>
-            </div>
-            <br/>
+          <div className="py-6 mb-6 border-b-2 border-[#F4F4F4]">
+            <index.Typography className="font-poppins text-[#67B037]">Personal Details</index.Typography>
+          </div>
           <div className="grid grid-cols-2 gap-4">
       <div className="mb-6">
-      {/* <index.Typography>First Name</index.Typography> */}
+      <index.Typography>First Name</index.Typography>
       <index.Input
         type="text"
-        variant="static"
-        placeholder="Rohit"
-        label="First Name"
         className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        disabled={isChecked ? false : true}
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
       />
       </div>
       <div className="mb-6">
-      {/* <index.Typography>Last Name</index.Typography> */}
+      <index.Typography>Last Name</index.Typography>
       <index.Input
         type="text"
-        variant="static"
-        placeholder="Deshmukh"
-        label="Last Name"
+        disabled={isChecked ? false : true}
         className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
       />
       </div>
       <div className="mb-6">
-      {/* <index.Typography>Last Name</index.Typography> */}
+      <index.Typography>Phone</index.Typography>
       <index.Input
         type="number"
-        variant="static"
-        placeholder="1234567890"
-        label="Phone"
+        disabled={isChecked ? false : true}
         className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
       />
       </div>
       <div className="mb-6">
-      {/* <index.Typography>Last Name</index.Typography> */}
+      <index.Typography>DOB</index.Typography>
       <index.Input
+        disabled={isChecked ? false : true}
         type="date"
-        variant="static"
-        label="DOB"
         value="2023-01-01"
         className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <div className="mb-6">
+      <index.Typography>Address</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <div className="mb-6">
+      <index.Typography>Blood Group</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
       />
       </div>
       </div> 
-      <div className="mb-6">
-      {/* <index.Typography>Last Name</index.Typography> */}
-      <index.Input
-        type="text"
-        variant="static"
-        placeholder="xyz indore MP"
-        label="Address"
-        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-      />
-      </div>
-   
+       
+
         <div>
        <div>
         <index.Typography>Gender</index.Typography>
@@ -175,6 +221,7 @@ export function DialogCustomAnimation({
           >
             <index.ListItemPrefix className="mr-3">
               <index.Radio
+                disabled={isChecked ? false : true}
                 name="horizontal-list"
                 id="horizontal-list-react"
                 ripple={false}
@@ -200,6 +247,7 @@ export function DialogCustomAnimation({
           >
             <index.ListItemPrefix className="mr-3">
               <index.Radio
+                disabled={isChecked ? false : true}
                 name="horizontal-list"
                 id="horizontal-list-vue"
                 ripple={false}
@@ -218,12 +266,233 @@ export function DialogCustomAnimation({
             </index.Typography>
           </label>
         </index.ListItem>
+        <index.ListItem className="p-0">
+          <label
+            htmlFor="horizontal-list-vue"
+            className="flex w-full cursor-pointer items-center px-3 py-2"
+          >
+            <index.ListItemPrefix className="mr-3">
+              <index.Radio
+                disabled={isChecked ? false : true}
+                name="horizontal-list"
+                id="horizontal-list-vue"
+                ripple={false}
+                value="Trans"
+                className="hover:before:opacity-0"
+                containerProps={{
+                  className: "p-0",
+                }}
+              />
+            </index.ListItemPrefix>
+            <index.Typography
+              color="blue-gray"
+              className="font-medium text-blue-gray-400"
+            >
+              Trans
+            </index.Typography>
+          </label>
+        </index.ListItem>
       </index.List>
     </index.Card>
         </div>
       
+
+      
+          </index.Card>
+           
+           {/* Company Details */}
+          <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA]">
+          <div className="py-6 mb-6 border-b-2 border-[#F4F4F4]">
+            <index.Typography className="font-poppins text-[#67B037]">Company Details</index.Typography>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+      <div className="mb-6">
+      <index.Typography>Employee ID</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        placeholder="Employee ID"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <div className="mb-6">
+      <index.Typography>Branch</index.Typography>
+      <index.Input
+        disabled={isChecked ? false : true}
+        type="text"
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        placeholder="Branch"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <div className="mb-6">
+      <index.Typography>Department</index.Typography>
+      <index.Select className=""
+         disabled={isChecked ? false : true}  >
+        <index.Option>Material Tailwind HTML</index.Option>
+        <index.Option>Material Tailwind React</index.Option>
+        <index.Option>Material Tailwind Vue</index.Option>
+        <index.Option>Material Tailwind Angular</index.Option>
+        <index.Option>Material Tailwind Svelte</index.Option>
+      </index.Select>
+      </div>
+      <div className="mb-6">
+      <index.Typography>Designation</index.Typography>
+      <index.Select className=""
+         disabled={isChecked ? false : true} >
+        <index.Option>Material Tailwind HTML</index.Option>
+        <index.Option>Material Tailwind React</index.Option>
+        <index.Option>Material Tailwind Vue</index.Option>
+        <index.Option>Material Tailwind Angular</index.Option>
+        <index.Option>Material Tailwind Svelte</index.Option>
+      </index.Select>
+      </div>
+      
+      <div className="mb-6">
+      <index.Typography>Company DOJ</index.Typography>
+      <index.Input
+        type="date"
+        disabled={isChecked ? false : true}
+        value="2023-01-01"
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+   
+      </div> 
+       
+
+      
           </index.Card>
 
+          {/* Professional Details */}
+          <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA]">
+          <div className="py-6 mb-6 border-b-2 border-[#F4F4F4]">
+            <index.Typography className="font-poppins text-[#67B037]">Professional Details</index.Typography>
+          </div>
+          <div className="">
+      <div className="mb-6">
+      <index.Typography>Work Experience</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <index.Typography>Skills</index.Typography>
+       <TagInput/>
+      </div> 
+          </index.Card>
+
+          {/* Bank Account Details */}
+          <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA]">
+          <div className="py-6 mb-6 border-b-2 border-[#F4F4F4]">
+            <index.Typography className="font-poppins text-[#67B037]">Bank Account Details</index.Typography>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+      <div className="mb-6 col-span-2">
+      <index.Typography>Account Holder Name</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <div className="mb-6">
+      <index.Typography>Account Number</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <div className="mb-6">
+      <index.Typography>Bank Name</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <div className="mb-6">
+      <index.Typography>IFSC</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      <div className="mb-6">
+      <index.Typography>Branch Location</index.Typography>
+      <index.Input
+        type="text"
+        disabled={isChecked ? false : true}
+        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+        labelProps={{
+          className: "before:content-none after:content-none",
+        }}
+        containerProps={{
+          className: "min-w-0",
+        }}
+      />
+      </div>
+      </div> 
+             
+          </index.Card>
+
+         <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA]">
+         <div className="py-6 mb-6 border-b-2 border-[#F4F4F4]">
+            <index.Typography className="font-poppins text-[#67B037]">Documents</index.Typography>
+          </div>
+          <Test/>
+         </index.Card>
+         
          </div>
 
         </index.DialogBody>
