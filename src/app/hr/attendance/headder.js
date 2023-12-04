@@ -39,8 +39,7 @@ export default function Deshbordhead() {
     <br/>
     <div className="grid grid-cols-7 gap-2 ">
     <index.Typography className="text-[#67B037] font-poppins">Monthly Attendance</index.Typography>
-    <div></div>
-    <div></div>
+    <div className="col-span-2"></div>
     <div className="w-50">
       <index.Input label="Employee Name" />
     </div>

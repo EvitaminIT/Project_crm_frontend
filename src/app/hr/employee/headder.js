@@ -7,7 +7,7 @@ export default function Headder() {
   return (
    <>
    <br/>
-   <div className="grid grid-cols-3 gap-2">
+   <div className="grid grid-cols-3 xl:grid-cols-2 gap-2">
     <div>
     <index.Typography className="text-[#67B037] font-poppins">Employee</index.Typography>
        <div className="grid grid-cols-2 gap-2 mb-[5px]">
@@ -19,9 +19,9 @@ export default function Headder() {
       </div>
       </div>
       </div>
-    <div></div>  
+    <div className="xl:hidden"></div>  
     <div className="flex justify-end gap-4">
-      <div className="relative text-gray-600 w-1/2 float-right">
+      <div className="relative text-gray-600 w-1/2 xl:w-3/5 float-right">
       <index.Input
         type="search"
         name="search"

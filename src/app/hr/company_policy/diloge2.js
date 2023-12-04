@@ -2,6 +2,7 @@ import React from "react";
 import index from "@/material_component/client_component"; 
 import Image from "next/image";
 import smpl from '../../../Images/sample.pdf'
+import PdfViewer from "./test";
 
 
 export function DialogCustomAnimation({
@@ -33,7 +34,7 @@ export function DialogCustomAnimation({
  
   return (
     <>
-      <index.Button onClick={handleOpen} className="bg-[#67B037] px-40 mt-4">View More</index.Button>
+      <index.Button onClick={handleOpen} className="bg-[#67B037] px-40 xl:px-28 mt-4">View More</index.Button>
       <index.Dialog
         open={open}
         size="xl"
@@ -74,7 +75,10 @@ export function DialogCustomAnimation({
  
 
         <index.DialogBody className="mx-12 ">
-        <iframe src={smpl} className="w-full h-[600px]"/>
+        <iframe src={smpl} className="w-full h-[600px] xl:hidden"/>
+        <div className="overflow-auto h-[38rem] xl2:hidden"> 
+          <PdfViewer pdfUrl={smpl} />
+        </div>
         </index.DialogBody>
         <index.DialogFooter className="justify-between">
      
