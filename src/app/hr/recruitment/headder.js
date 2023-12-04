@@ -14,10 +14,10 @@ export default function Headder({
    <div className="grid grid-cols-3 gap-2">
     <div>
     <index.Typography  className="text-xl text-[#67B037] font-poppins">{top_name}</index.Typography>
-       <div className="grid grid-cols-2 gap-2 mb-[5px]">
+       <div className="grid xl2:grid-cols-2 gap-2 mb-[5px]">
         <div className="flex">
         <div className="flex">
-        <index.Typography className="text-[#67B037] font-poppins">{breadCrums_first}<index.ArrowForwardIosIcon className="text-xs" /></index.Typography>
+        <index.Typography className="text-[#67B037] font-poppins">{breadCrums_first}<index.ArrowForwardIosIcon className="!text-xs" /></index.Typography>
         <index.Typography className="text-[#979BA1]">{breadCrums_second}</index.Typography>
         </div>   
       </div>
