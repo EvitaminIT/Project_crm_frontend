@@ -117,7 +117,8 @@ import {
   import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
   import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
   import {CheckIcon} from "@heroicons/react/24/outline";
-
+  import DownloadIcon from '@mui/icons-material/Download';
+  import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 
 
 const index ={
@@ -240,6 +241,8 @@ const index ={
     Collapse,
     Switch,
     CheckIcon,
+    DownloadIcon,
+    ClearOutlinedIcon,
 }
 
 export default index;

@@ -6,6 +6,7 @@ import TagInput from "./input_tag";
 import Customupladbtn from "./Customupladbtn";
 import { file_upload_filed } from "./SSRcomponent";
 import fil_img from "../../../Images/file_img.svg"
+import File_btn_badge from "./file_btn_badge";
 
 export function DialogCustomAnimation({
     profile_image,
@@ -509,13 +510,9 @@ export function DialogCustomAnimation({
             return(
               <>   
      <div className={`${isChecked?"hidden":""}`}>
-    <index.Badge
-      content={<index.CheckIcon className="h-4 w-4 text-white" strokeWidth={2.5} />}
-      className="bg-gradient-to-tr from-green-400 to-green-600 border-2 border-white shadow-lg shadow-black/20"
-    >
-      <Image src={fil_img}/>
-    </index.Badge>
-    <index.Typography className="font-semibold">{filed.file_title}</index.Typography>
+      <index.Card className="mx-24 border-2 border-[#BABABA] h-full bg-[#E0E0E0]">
+      <File_btn_badge file_title={filed.file_title}/>
+      </index.Card>
      </div>
               </>
             )
