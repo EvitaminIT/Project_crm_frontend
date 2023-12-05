@@ -3,7 +3,9 @@ import index from "@/material_component/client_component";
 import Image from "next/image";
 import default_img from '../../../Images/defult.jpg'
 import TagInput from "./input_tag";
-import Test from "./test";
+import Customupladbtn from "./Customupladbtn";
+import { file_upload_filed } from "./SSRcomponent";
+import fil_img from "../../../Images/file_img.svg"
 
 export function DialogCustomAnimation({
     profile_image,
@@ -26,6 +28,7 @@ export function DialogCustomAnimation({
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+    
 
     if (file) {
       const reader = new FileReader();
@@ -55,7 +58,7 @@ export function DialogCustomAnimation({
           unmount: { scale: 0.9, y: -100 },
         }}
       >
-         <index.DialogHeader>
+         <index.DialogHeader className="pb-0">
         
         <div className="w-full">
         <index.IconButton
@@ -112,14 +115,14 @@ export function DialogCustomAnimation({
         <p>Edit is {isChecked ? "on" : "off"}</p>
         </div>
 
-        <index.DialogBody className="mx-12 overflow-auto h-[65vh] scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-200 scrollbar-thumb-rounded-lg scrollbar-w-lg">
+        <index.DialogBody className="mx-12 overflow-auto h-[61vh] scrollbar-thin scrollbar-thumb-green-500 scrollbar-track-gray-200 scrollbar-thumb-rounded-lg scrollbar-w-lg">
          <div className="grid grid-cols-2 gap-4 ">
           {/* Personal Details */}
           <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA]">
           <div className="py-6 mb-6 border-b-2 border-[#F4F4F4]">
             <index.Typography className="font-poppins text-[#67B037]">Personal Details</index.Typography>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-2">
       <div className="mb-6">
       <index.Typography>First Name</index.Typography>
       <index.Input
@@ -486,18 +489,47 @@ export function DialogCustomAnimation({
              
           </index.Card>
 
-         <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA]">
+         <index.Card className="p-6 shadow-md border-solid border-2 border-[#BABABA] col-span-2">
          <div className="py-6 mb-6 border-b-2 border-[#F4F4F4]">
             <index.Typography className="font-poppins text-[#67B037]">Documents</index.Typography>
           </div>
-          <Test/>
+          <div className="grid grid-cols-3 gap-4">  
+          {file_upload_filed.map((filed)=>{
+            return(
+              <>
+          <div className={`py-2 ${isChecked?"":"hidden"}`}>
+          <index.Typography className="font-semibold">{filed.file_title}</index.Typography>
+          <Customupladbtn/>
+          </div>
+              </>
+            )
+          })}
+           
+          {file_upload_filed.map((filed)=>{
+            return(
+              <>   
+     <div className={`${isChecked?"hidden":""}`}>
+    <index.Badge
+      content={<index.CheckIcon className="h-4 w-4 text-white" strokeWidth={2.5} />}
+      className="bg-gradient-to-tr from-green-400 to-green-600 border-2 border-white shadow-lg shadow-black/20"
+    >
+      <Image src={fil_img}/>
+    </index.Badge>
+    <index.Typography className="font-semibold">{filed.file_title}</index.Typography>
+     </div>
+              </>
+            )
+          })}
+          </div>
+
+
          </index.Card>
          
          </div>
-
+        
         </index.DialogBody>
-        <index.DialogFooter className="justify-between">
-     
+        <index.DialogFooter className="w-full px-[63px]">
+         <index.Button className={`bg-[#67B037] ${isChecked?"":"invisible"}`}>Save</index.Button>
         </index.DialogFooter>
       </index.Dialog>
     </>

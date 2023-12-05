@@ -116,6 +116,7 @@ import {
   import SearchIcon from '@mui/icons-material/Search';
   import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
   import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+  import {CheckIcon} from "@heroicons/react/24/outline";
 
 
 
@@ -238,6 +239,7 @@ const index ={
     Radio,
     Collapse,
     Switch,
+    CheckIcon,
 }
 
 export default index;
